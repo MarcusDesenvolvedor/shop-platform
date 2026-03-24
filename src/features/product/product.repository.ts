@@ -207,3 +207,7 @@ export async function findCategoryInStore(categoryId: string, storeId: string): 
 
   return Boolean(category);
 }
+
+export async function countProductsByStoreId(storeId: string): Promise<number> {
+  return prisma.product.count({ where: { storeId } });
+}

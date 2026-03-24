@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Bell, CircleHelp, Search } from "lucide-react";
 
 type HeaderProps = {
@@ -14,18 +15,12 @@ export function Header({ title, subtitle }: HeaderProps) {
           <p className="text-sm text-slate-500">{subtitle}</p>
         </div>
         <div className="flex items-center gap-3">
-          <button
-            className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
-            type="button"
-          >
-            Export Report
-          </button>
-          <button
+          <Link
+            href="/dashboard/products/new"
             className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-500"
-            type="button"
           >
             New Product
-          </button>
+          </Link>
         </div>
       </div>
 

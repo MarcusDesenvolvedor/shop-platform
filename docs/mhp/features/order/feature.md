@@ -39,12 +39,18 @@ Define and implement checkout and order creation for a single store, including c
   - Public endpoint.
   - Accepts cart items and customer checkout data.
   - Creates an order with `PENDING_PAYMENT` and related payment with `PENDING`.
+- `GET /api/stores/[slug]/orders`
+  - Owner endpoint.
+  - Lists all orders for the authenticated owner's store.
+- `GET /api/stores/[slug]/orders/[orderId]`
+  - Owner endpoint.
+  - Returns full order detail including customer info, items, and payment status.
 
 ## UI Behavior
 
-- Checkout UI implementation is intentionally out of scope for now (task 7.7 ignored).
-- Confirmation UI implementation is intentionally out of scope for now (task 7.8 ignored).
-- API contracts are delivered to support UI integration later.
+- Dashboard order list at `/dashboard/orders` with status filtering and badges.
+- Dashboard order detail at `/dashboard/orders/[id]` with customer info, items table, and payment confirmation action.
+- Checkout and confirmation UI on the storefront are planned for a later phase.
 
 ## Dependencies
 

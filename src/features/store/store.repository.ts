@@ -31,3 +31,13 @@ export async function listStoresByUserId(userId: string): Promise<StoreRecord[]>
     orderBy: { createdAt: "desc" },
   });
 }
+
+export async function updateStore(
+  storeId: string,
+  data: { name?: string; slug?: string }
+): Promise<StoreRecord> {
+  return prisma.store.update({
+    where: { id: storeId },
+    data,
+  });
+}

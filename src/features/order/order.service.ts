@@ -1,12 +1,16 @@
 import { getStoreBySlug } from "@/features/store/store.service";
 import {
   createOrderWithPendingPayment,
+  findOrderByIdAndStore,
+  listOrdersByStoreId,
   listProductsForCheckout,
 } from "./order.repository";
 import type {
   CheckoutItemInput,
   CheckoutOrderResult,
   CreateOrderFromCheckoutInput,
+  OrderDetail,
+  OrderListItem,
   ValidatedCheckoutItem,
 } from "./order.types";
 
@@ -14,6 +18,13 @@ export class OrderValidationError extends Error {
   constructor(message: string) {
     super(message);
     this.name = "OrderValidationError";
+  }
+}
+
+export class OrderNotFoundError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "OrderNotFoundError";
   }
 }
 
@@ -105,4 +116,18 @@ export async function createOrderFromCheckout(
     items: validatedItems,
     totalAmount,
   });
+}
+
+export async function listOrdersForStore(storeId: string): Promise<OrderListItem[]> {
+  return listOrdersByStoreId(storeId);
+}
+
+export async function getOrderForStore(storeId: string, orderId: string): Promise<OrderDetail> {
+  const order = await findOrderByIdAndStore(orderId, storeId);
+
+  if (!order) {
+    throw new OrderNotFoundError("Order not found");
+  }
+
+  return order;
 }

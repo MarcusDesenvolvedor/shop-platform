@@ -41,11 +41,14 @@ Define and implement the store feature as the multi-tenant root, allowing authen
   - Returns stores owned by the authenticated user.
 - `GET /api/stores/[slug]`
   - Returns the owner-scoped store by slug.
+- `PATCH /api/stores/[slug]`
+  - Updates store name (and auto-regenerates slug) for the owner.
 
 ## UI Behavior
 
-- Dashboard UI for store creation is planned for a later task.
-- This phase delivers backend contracts required by future features.
+- Store creation form is displayed in the dashboard layout when the user has no store.
+- Settings page at `/dashboard/settings` allows updating the store name.
+- Sidebar displays real store name and user name, with dynamic active route state.
 
 ## Dependencies
 

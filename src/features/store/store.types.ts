@@ -11,6 +11,10 @@ export type CreateStoreInput = {
   name: string;
 };
 
+export type UpdateStoreInput = {
+  name?: string;
+};
+
 export type StoreSlugParams = {
   slug: string;
 };

@@ -55,3 +55,25 @@ export type CheckoutOrderResult = {
   items: OrderItemView[];
   createdAt: Date;
 };
+
+export type OrderListItem = {
+  id: string;
+  storeId: string;
+  status: "PENDING_PAYMENT" | "PAID" | "CANCELED";
+  firstName: string;
+  lastName: string;
+  totalAmount: number;
+  createdAt: Date;
+  paymentStatus: "PENDING" | "CONFIRMED" | null;
+};
+
+export type OrderDetail = {
+  id: string;
+  storeId: string;
+  status: "PENDING_PAYMENT" | "PAID" | "CANCELED";
+  totalAmount: number;
+  createdAt: Date;
+  customer: CheckoutCustomer;
+  items: OrderItemView[];
+  paymentStatus: "PENDING" | "CONFIRMED" | null;
+};

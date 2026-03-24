@@ -22,4 +22,9 @@ export const checkoutRequestSchema = z.object({
   items: z.array(checkoutItemSchema).min(1).max(100),
 });
 
+export const orderIdParamsSchema = z.object({
+  orderId: z.string().trim().uuid(),
+});
+
 export type CheckoutRequestPayload = z.infer<typeof checkoutRequestSchema>;
+export type OrderIdParamsPayload = z.infer<typeof orderIdParamsSchema>;

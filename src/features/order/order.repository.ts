@@ -3,6 +3,8 @@ import type {
   CheckoutCustomer,
   CheckoutProduct,
   CheckoutOrderResult,
+  OrderDetail,
+  OrderListItem,
   ValidatedCheckoutItem,
 } from "./order.types";
 
@@ -161,4 +163,96 @@ export async function createOrderWithPendingPayment(data: {
   });
 
   return mapCreatedOrderRecord(created);
+}
+
+export async function listOrdersByStoreId(storeId: string): Promise<OrderListItem[]> {
+  const orders = await prisma.order.findMany({
+    where: { storeId },
+    orderBy: { createdAt: "desc" },
+    select: {
+      id: true,
+      storeId: true,
+      status: true,
+      firstName: true,
+      lastName: true,
+      totalAmount: true,
+      createdAt: true,
+      payment: { select: { status: true } },
+    },
+  });
+
+  return orders.map((order) => ({
+    id: order.id,
+    storeId: order.storeId,
+    status: order.status,
+    firstName: order.firstName,
+    lastName: order.lastName,
+    totalAmount: order.totalAmount.toNumber(),
+    createdAt: order.createdAt,
+    paymentStatus: order.payment?.status ?? null,
+  }));
+}
+
+export async function findOrderByIdAndStore(
+  orderId: string,
+  storeId: string
+): Promise<OrderDetail | null> {
+  const order = await prisma.order.findFirst({
+    where: { id: orderId, storeId },
+    include: {
+      items: {
+        include: {
+          product: { select: { name: true } },
+        },
+      },
+      payment: { select: { status: true } },
+    },
+  });
+
+  if (!order) {
+    return null;
+  }
+
+  return {
+    id: order.id,
+    storeId: order.storeId,
+    status: order.status,
+    totalAmount: order.totalAmount.toNumber(),
+    createdAt: order.createdAt,
+    customer: {
+      firstName: order.firstName,
+      lastName: order.lastName,
+      street: order.street,
+      number: order.number,
+      city: order.city,
+      state: order.state,
+      country: order.country,
+      identificationNumber: order.identificationNumber,
+      phone: order.phone,
+    },
+    items: order.items.map((item) => {
+      const unitPrice = item.price.toNumber();
+      return {
+        productId: item.productId,
+        productName: item.product.name,
+        quantity: item.quantity,
+        unitPrice,
+        subtotal: unitPrice * item.quantity,
+      };
+    }),
+    paymentStatus: order.payment?.status ?? null,
+  };
+}
+
+export async function countOrdersByStoreId(storeId: string): Promise<number> {
+  return prisma.order.count({ where: { storeId } });
+}
+
+export async function sumOrderRevenueByStoreId(storeId: string): Promise<number> {
+  const result = await prisma.order.aggregate({
+    where: { storeId, status: "PAID" },
+    _sum: { totalAmount: true },
+  });
+
+  return result._sum.totalAmount?.toNumber() ?? 0;
 }

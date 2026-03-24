@@ -3,8 +3,9 @@ import {
   findStoreBySlug,
   findStoreByUserId,
   listStoresByUserId,
+  updateStore,
 } from "./store.repository";
-import type { CreateStoreInput, Store } from "./store.types";
+import type { CreateStoreInput, Store, UpdateStoreInput } from "./store.types";
 
 export class StoreConflictError extends Error {
   constructor(message: string) {
@@ -80,4 +81,35 @@ export async function getStoreBySlug(slug: string): Promise<Store> {
   }
 
   return store;
+}
+
+export async function updateStoreForOwner(
+  ownerUserId: string,
+  slug: string,
+  input: UpdateStoreInput
+): Promise<Store> {
+  const store = await getOwnedStoreBySlug(ownerUserId, slug);
+
+  const updateData: { name?: string; slug?: string } = {};
+
+  if (input.name !== undefined) {
+    const trimmedName = input.name.trim();
+    const newSlug = normalizeStoreSlug(trimmedName);
+
+    if (newSlug !== store.slug) {
+      const existingBySlug = await findStoreBySlug(newSlug);
+      if (existingBySlug) {
+        throw new StoreConflictError("Store slug already exists");
+      }
+    }
+
+    updateData.name = trimmedName;
+    updateData.slug = newSlug;
+  }
+
+  if (Object.keys(updateData).length === 0) {
+    return store;
+  }
+
+  return updateStore(store.id, updateData);
 }
