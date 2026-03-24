@@ -70,3 +70,14 @@ export async function getOwnedStoreBySlug(ownerUserId: string, slug: string): Pr
 
   return store;
 }
+
+export async function getStoreBySlug(slug: string): Promise<Store> {
+  const normalizedSlug = slug.trim().toLowerCase();
+  const store = await findStoreBySlug(normalizedSlug);
+
+  if (!store) {
+    throw new StoreNotFoundError("Store not found");
+  }
+
+  return store;
+}
