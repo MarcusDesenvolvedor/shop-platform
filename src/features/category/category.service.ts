@@ -7,6 +7,7 @@ import {
   listCategoriesByStoreId,
   updateCategory,
 } from "./category.repository";
+import { getStoreBySlug } from "@/features/store/store.service";
 import type { Category, CreateCategoryInput, UpdateCategoryInput } from "./category.types";
 
 export class CategoryNotFoundError extends Error {
@@ -49,6 +50,11 @@ export async function createCategoryForStore(storeId: string, input: CreateCateg
 
 export async function listCategoriesForStore(storeId: string): Promise<Category[]> {
   return listCategoriesByStoreId(storeId);
+}
+
+export async function listCategoriesForStoreSlug(storeSlug: string): Promise<Category[]> {
+  const store = await getStoreBySlug(storeSlug);
+  return listCategoriesByStoreId(store.id);
 }
 
 export async function getCategoryForStore(storeId: string, categoryId: string): Promise<Category> {

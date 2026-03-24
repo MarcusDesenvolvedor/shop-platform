@@ -117,6 +117,26 @@ export async function findProductByIdAndStore(productId: string, storeId: string
   return mapProductRecord(product);
 }
 
+export async function findActiveProductByIdAndStore(
+  productId: string,
+  storeId: string
+): Promise<Product | null> {
+  const product = await prisma.product.findFirst({
+    where: { id: productId, storeId, isActive: true },
+    include: {
+      images: {
+        orderBy: { createdAt: "asc" },
+      },
+    },
+  });
+
+  if (!product) {
+    return null;
+  }
+
+  return mapProductRecord(product);
+}
+
 export async function updateProduct(
   productId: string,
   data: {

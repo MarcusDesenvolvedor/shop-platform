@@ -2,6 +2,7 @@ import { getStoreBySlug } from "@/features/store/store.service";
 import {
   createProduct,
   deleteProduct,
+  findActiveProductByIdAndStore,
   findCategoryInStore,
   findProductByIdAndStore,
   listActiveProductsByStoreId,
@@ -106,6 +107,17 @@ export async function listProductsForStore(storeId: string): Promise<Product[]> 
 export async function listActiveProductsByStoreSlug(storeSlug: string): Promise<Product[]> {
   const store = await getStoreBySlug(storeSlug);
   return listActiveProductsByStoreId(store.id);
+}
+
+export async function getActiveProductByStoreSlug(storeSlug: string, productId: string): Promise<Product> {
+  const store = await getStoreBySlug(storeSlug);
+  const product = await findActiveProductByIdAndStore(productId, store.id);
+
+  if (!product) {
+    throw new ProductNotFoundError("Product not found");
+  }
+
+  return product;
 }
 
 export async function getProductForStore(storeId: string, productId: string): Promise<Product> {
