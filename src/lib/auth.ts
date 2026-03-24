@@ -1,4 +1,5 @@
 import { auth } from "@clerk/nextjs/server";
+import { syncCurrentAuthenticatedUser } from "@/features/auth/auth.service";
 
 export async function getAuthUserId(): Promise<string> {
   const { userId } = await auth();
@@ -8,4 +9,8 @@ export async function getAuthUserId(): Promise<string> {
   }
 
   return userId;
+}
+
+export async function requireSynchronizedAuthUser() {
+  return syncCurrentAuthenticatedUser();
 }
