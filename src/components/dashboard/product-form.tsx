@@ -65,6 +65,8 @@ export function ProductForm({ categories, product }: ProductFormProps) {
 
   const { fields, append, remove } = useFieldArray({ control, name: "images" });
   const isActive = watch("isActive");
+  const selectedCategoryId = watch("categoryId");
+  const selectedCategory = categories.find((category) => category.id === selectedCategoryId);
 
   async function onSubmit(values: ProductFormValues) {
     const payload = {
@@ -236,11 +238,13 @@ export function ProductForm({ categories, product }: ProductFormProps) {
               <div className="space-y-2">
                 <Label>Category</Label>
                 <Select
-                  defaultValue={product?.categoryId ?? ""}
-                  onValueChange={(value) => setValue("categoryId", value ?? "")}
+                  value={selectedCategoryId}
+                  onValueChange={(value) => setValue("categoryId", value, { shouldValidate: true })}
                 >
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select a category" />
+                    <SelectValue placeholder="Select a category">
+                      {selectedCategory?.name}
+                    </SelectValue>
                   </SelectTrigger>
                   <SelectContent>
                     {categories.map((cat) => (

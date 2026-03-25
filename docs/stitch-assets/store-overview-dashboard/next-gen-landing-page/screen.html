@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Next Gen - Modern E-commerce Platform</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f2f4f6",
+              "primary-fixed": "#e1e0ff",
+              "surface-dim": "#d8dadc",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "secondary-container": "#d5e3fc",
+              "error": "#ba1a1a",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#c0c1ff",
+              "on-tertiary-fixed": "#301400",
+              "on-secondary-fixed": "#0d1c2e",
+              "tertiary-fixed-dim": "#ffb783",
+              "surface-variant": "#e0e3e5",
+              "primary": "#4648d4",
+              "on-surface-variant": "#464554",
+              "on-secondary-fixed-variant": "#3a485b",
+              "on-primary-container": "#fffbff",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#e0e3e5",
+              "outline-variant": "#c7c4d7",
+              "on-error": "#ffffff",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#b55d00",
+              "surface-container": "#eceef0",
+              "surface": "#f7f9fb",
+              "on-secondary-container": "#57657a",
+              "background": "#f7f9fb",
+              "primary-container": "#6063ee",
+              "tertiary": "#904900",
+              "surface-bright": "#f7f9fb",
+              "on-surface": "#191c1e",
+              "on-background": "#191c1e",
+              "secondary-fixed": "#d5e3fc",
+              "secondary": "#515f74",
+              "inverse-surface": "#2d3133",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#494bd6",
+              "inverse-primary": "#c0c1ff",
+              "inverse-on-surface": "#eff1f3",
+              "on-tertiary-fixed-variant": "#703700",
+              "outline": "#767586",
+              "tertiary-fixed": "#ffdcc5",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#b9c7df",
+              "on-tertiary-container": "#fffbff",
+              "surface-container-high": "#e6e8ea",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed": "#07006c"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.25rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; color: #191c1e; }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      .glass-header { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+      .editorial-shadow { box-shadow: 0 12px 32px -4px rgba(25, 28, 30, 0.06); }
+      .primary-gradient { background: linear-gradient(135deg, #4648d4 0%, #6063ee 100%); }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none font-sans text-sm font-medium tracking-tight">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-slate-900 dark:text-slate-50">Next Gen</span>
+<div class="hidden md:flex items-center gap-6">
+<!-- Features is active by intent of the landing page focus -->
+<a class="text-indigo-600 dark:text-indigo-400 font-semibold border-b-2 border-indigo-600 transition-colors duration-200" href="#">Features</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors duration-200" href="#">Pricing</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors duration-200" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="primary-gradient text-white px-5 py-2.5 rounded-lg font-semibold active:scale-95 transition-transform">Create Store</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase">
+<span>New Feature Out Now</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
+                    Build your online store in <span class="text-primary">minutes</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                    Next Gen is the easiest way to create, manage, and grow your online business. Focus on your craft while we handle the complexity of commerce.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="primary-gradient text-white px-8 py-4 rounded-lg font-bold text-lg editorial-shadow hover:opacity-90 active:scale-95 transition-all">
+                        Start your store
+                    </button>
+<button class="flex items-center justify-center gap-2 bg-surface-container-high text-on-surface px-8 py-4 rounded-lg font-bold text-lg hover:bg-surface-dim transition-colors">
+<span class="material-symbols-outlined">play_circle</span>
+                        See how it works
+                    </button>
+</div>
+<div class="flex items-center gap-4 pt-4">
+<div class="flex -space-x-3">
+<img class="h-10 w-10 rounded-full border-2 border-white object-cover" data-alt="professional portrait of a young female entrepreneur smiling in a sunlit office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuE82VFDO3qHnW3KOyTqmUehsKo3tOA-ZsMtVU0bGQ99V79itTrxhIiq427wIenbnqqTqAD26GolProGcC1P-zeYhlhfnqZUm_CNybUbb1BdW3CysnlcL1AY-BeL5gPt2HVKQQQAckVEc_bTM14OfmGpEmttiUN1w4mtcDEBNdcEd9YsCmSjbWtGpCtb1Yl8T2uUd46bhznsZ7SqoA5HCqbodkO0TUDC1tQve4fspAtiqGzILPg2H5oOLfS9o8d6E8HSpVeEMdxX7y"/>
+<img class="h-10 w-10 rounded-full border-2 border-white object-cover" data-alt="close-up of a smiling man with glasses in a professional casual setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg4a0T6f1KGZxhWYpMVH2RypiKvNARO64dk2mLh_4I27hDKQCrjxco1rti4U6pf3V74wToD6AgdFq4G7NYWeVuDa8zTAVDswa3NEu2chFEoS3KhnCoFv7jK6P1k6Aq05nRWvy36a1JzUcJwy1nIC4ihREueBwD1pad7c6l7bMdI_trJ9TykvO7inIb5r_pL8mq5-ug9UwC-vR4mXlPo1zQgmNjQm1X_TlN5_yVG3R-rAiRjNoUwU7vsBYdF_ubL92xRWwNMG1u8YAZ"/>
+<img class="h-10 w-10 rounded-full border-2 border-white object-cover" data-alt="vibrant portrait of a creative professional woman in a modern design studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjvaitALttLVh2Hn9QSVX7JV6m0aKtAV-t0X93VkVk756SZk8LC6qMG4URA0YjZmUnpYjS77ve3Zo1yCfz8svMB1yIwDafG07wRhRd5cuxmnMA7uFujO4NM4GQfAqOag9utfaCk3EWcPnqSmOFd-Qy_XoklFvtqTDRC0InCL3yRzmUkbqWK5CqGhE3ptvv_2qvi6yvTiOjglHdj7QqM38qPkSQocDlE1FCdtvVS3RoIihG-nrAV72a_jcu-ABceNM-ZZNWeOENY877"/>
+</div>
+<p class="text-sm text-on-surface-variant">
+                        Join <span class="font-bold text-on-surface">10,000+</span> merchants worldwide
+                    </p>
+</div>
+</div>
+<!-- Product Visual Mockup -->
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl group-hover:bg-primary/15 transition-all duration-500"></div>
+<div class="relative bg-surface-container-lowest p-4 rounded-xl editorial-shadow overflow-hidden border border-outline-variant/20">
+<div class="flex items-center justify-between mb-4 px-2">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-error/20"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary-container/20"></div>
+<div class="w-3 h-3 rounded-full bg-primary/20"></div>
+</div>
+<div class="px-4 py-1 bg-surface-container rounded-lg text-[10px] font-medium text-on-surface-variant tracking-wider uppercase">Merchant Dashboard</div>
+</div>
+<div class="grid grid-cols-3 gap-4 mb-6">
+<div class="p-4 bg-surface rounded-lg">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider mb-1">Revenue</p>
+<p class="text-2xl font-extrabold text-on-surface tracking-tight">$42,920</p>
+<span class="text-[10px] font-bold text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs">trending_up</span> +12.5%
+                            </span>
+</div>
+<div class="p-4 bg-surface rounded-lg">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider mb-1">Orders</p>
+<p class="text-2xl font-extrabold text-on-surface tracking-tight">854</p>
+<span class="text-[10px] font-bold text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs">trending_up</span> +8.2%
+                            </span>
+</div>
+<div class="p-4 bg-surface rounded-lg">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider mb-1">Visitors</p>
+<p class="text-2xl font-extrabold text-on-surface tracking-tight">12.1k</p>
+<span class="text-[10px] font-bold text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs">horizontal_rule</span> stable
+                            </span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="h-32 w-full bg-surface-container-low rounded-lg overflow-hidden relative">
+<div class="absolute bottom-0 left-0 right-0 h-16 primary-gradient opacity-10 blur-xl"></div>
+<!-- Mock chart lines using CSS -->
+<div class="absolute inset-0 flex items-end gap-1 px-4 py-2">
+<div class="w-full bg-primary/20 rounded-t-sm" style="height: 40%"></div>
+<div class="w-full bg-primary/40 rounded-t-sm" style="height: 60%"></div>
+<div class="w-full bg-primary/30 rounded-t-sm" style="height: 50%"></div>
+<div class="w-full bg-primary/70 rounded-t-sm" style="height: 85%"></div>
+<div class="w-full bg-primary/50 rounded-t-sm" style="height: 70%"></div>
+<div class="w-full primary-gradient rounded-t-sm" style="height: 95%"></div>
+<div class="w-full bg-primary/40 rounded-t-sm" style="height: 65%"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="h-20 bg-surface rounded-lg p-3 flex flex-col justify-center">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase mb-1">Best Seller</p>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-white rounded shadow-sm"></div>
+<div class="space-y-1">
+<div class="w-16 h-2 bg-outline-variant/30 rounded"></div>
+<div class="w-12 h-2 bg-outline-variant/10 rounded"></div>
+</div>
+</div>
+</div>
+<div class="h-20 bg-surface rounded-lg p-3 flex flex-col justify-center">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase mb-1">Regions</p>
+<div class="flex items-center gap-1">
+<div class="w-4 h-4 rounded-full bg-primary"></div>
+<div class="w-4 h-4 rounded-full bg-primary/60"></div>
+<div class="w-4 h-4 rounded-full bg-primary/30"></div>
+<div class="w-4 h-4 rounded-full bg-primary/10"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="bg-surface-container-low py-16">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-10">Trusted by modern businesses</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+<span class="text-2xl font-extrabold tracking-tighter">LUMINA</span>
+<span class="text-2xl font-extrabold tracking-tighter">VERTEX</span>
+<span class="text-2xl font-extrabold tracking-tighter">ORBIT</span>
+<span class="text-2xl font-extrabold tracking-tighter">STRIDE</span>
+<span class="text-2xl font-extrabold tracking-tighter">ECHO</span>
+<span class="text-2xl font-extrabold tracking-tighter">NOVA</span>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="max-w-7xl mx-auto px-6 py-24">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight">Everything you need to scale</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Powerful tools designed for growth, managed from one beautiful central location.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="p-8 bg-surface-container-lowest rounded-xl editorial-shadow hover:translate-y-[-4px] transition-transform duration-300">
+<div class="w-12 h-12 primary-gradient text-white rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">storefront</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Easy store creation</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Drag-and-drop builder with premium editorial themes that make your brand stand out from the crowd instantly.
+                    </p>
+</div>
+<!-- Feature 2 -->
+<div class="p-8 bg-surface-container-lowest rounded-xl editorial-shadow hover:translate-y-[-4px] transition-transform duration-300">
+<div class="w-12 h-12 primary-gradient text-white rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Product management</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Bulk upload, AI-assisted descriptions, and automated inventory sync across multiple sales channels effortlessly.
+                    </p>
+</div>
+<!-- Feature 3 -->
+<div class="p-8 bg-surface-container-lowest rounded-xl editorial-shadow hover:translate-y-[-4px] transition-transform duration-300">
+<div class="w-12 h-12 primary-gradient text-white rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Order tracking</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        End-to-end visibility from purchase to delivery. Automated notifications keep your customers happy and informed.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0">
+<span class="text-lg font-bold text-slate-900 dark:text-slate-100">Next Gen</span>
+<p class="text-xs font-normal text-slate-500 dark:text-slate-400 mt-2">© 2024 Next Gen. Editorial Merchant Design.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-xs font-normal text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs font-normal text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors" href="#">Terms of Service</a>
+<a class="text-xs font-normal text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors" href="#">Contact Us</a>
+<a class="text-xs font-normal text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors" href="#">Documentation</a>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

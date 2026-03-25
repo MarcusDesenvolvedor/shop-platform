@@ -3,12 +3,24 @@ import type { Store } from "./store.types";
 
 type StoreRecord = Store;
 
-export async function createStore(data: { userId: string; name: string; slug: string }): Promise<StoreRecord> {
+export async function createStore(data: {
+  userId: string;
+  name: string;
+  slug: string;
+  defaultCategoryName?: string;
+}): Promise<StoreRecord> {
   return prisma.store.create({
     data: {
       userId: data.userId,
       name: data.name,
       slug: data.slug,
+      categories: data.defaultCategoryName
+        ? {
+            create: {
+              name: data.defaultCategoryName.trim(),
+            },
+          }
+        : undefined,
     },
   });
 }

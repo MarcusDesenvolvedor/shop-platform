@@ -1,8 +1,13 @@
-export default function PublicHomePage() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold">SaaS E-commerce Platform</h1>
-      <p className="mt-4 text-lg text-muted-foreground">Multi-tenant e-commerce platform</p>
-    </main>
-  );
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import { LandingPage } from "@/components/public/landing-page";
+
+export default async function PublicHomePage() {
+  const { userId } = await auth();
+
+  if (userId) {
+    redirect("/dashboard");
+  }
+
+  return <LandingPage />;
 }

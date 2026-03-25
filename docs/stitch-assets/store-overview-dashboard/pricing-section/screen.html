@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pricing - Next Gen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4648d4",
+              "inverse-surface": "#2d3133",
+              "secondary": "#515f74",
+              "primary-container": "#6063ee",
+              "outline-variant": "#c7c4d7",
+              "on-tertiary-container": "#fffbff",
+              "on-background": "#191c1e",
+              "surface-container": "#eceef0",
+              "surface": "#f7f9fb",
+              "on-secondary-fixed": "#0d1c2e",
+              "on-secondary-container": "#57657a",
+              "surface-variant": "#e0e3e5",
+              "surface-container-highest": "#e0e3e5",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "surface-dim": "#d8dadc",
+              "surface-tint": "#494bd6",
+              "inverse-primary": "#c0c1ff",
+              "inverse-on-surface": "#eff1f3",
+              "background": "#f7f9fb",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#c0c1ff",
+              "on-tertiary-fixed-variant": "#703700",
+              "on-primary-fixed": "#07006c",
+              "error-container": "#ffdad6",
+              "surface-container-high": "#e6e8ea",
+              "on-surface": "#191c1e",
+              "on-secondary-fixed-variant": "#3a485b",
+              "tertiary-fixed-dim": "#ffb783",
+              "secondary-container": "#d5e3fc",
+              "tertiary": "#904900",
+              "secondary-fixed-dim": "#b9c7df",
+              "on-error": "#ffffff",
+              "tertiary-container": "#b55d00",
+              "on-primary": "#ffffff",
+              "secondary-fixed": "#d5e3fc",
+              "on-surface-variant": "#464554",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#ffdcc5",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "outline": "#767586",
+              "primary-fixed": "#e1e0ff",
+              "on-primary-container": "#fffbff",
+              "surface-container-low": "#f2f4f6",
+              "on-tertiary-fixed": "#301400",
+              "error": "#ba1a1a",
+              "surface-bright": "#f7f9fb"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.25rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Inter', sans-serif; }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .bg-glass {
+        backdrop-filter: blur(20px) saturate(180%);
+      }
+      .tonal-shift {
+        transition: background-color 0.3s ease;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none font-['Inter'] antialiased tracking-tight">
+<div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-slate-900 dark:text-slate-50">Next Gen</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Features</a>
+<a class="text-indigo-600 dark:text-indigo-400 font-semibold" href="#">Pricing</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Solutions</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Resources</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors text-sm font-medium">Log In</button>
+<button class="bg-indigo-600 dark:bg-indigo-500 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 ease-in-out active:scale-95 hover:bg-indigo-700">Get Started</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+<!-- Hero Header -->
+<header class="text-center mb-20">
+<h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-on-surface mb-6">
+                Simple pricing for your business
+            </h1>
+<p class="text-xl text-on-surface-variant max-w-2xl mx-auto">
+                Start for free and upgrade as you grow. Our modular plans scale with your ambition, from solo merchants to global enterprises.
+            </p>
+</header>
+<!-- Pricing Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+<!-- Free Plan -->
+<section class="flex flex-col p-8 rounded-xl bg-surface-container-low transition-all duration-300 hover:translate-y-[-4px]">
+<div class="mb-8">
+<span class="text-sm font-bold tracking-widest text-on-surface-variant uppercase">FREE</span>
+<div class="mt-4 flex items-baseline">
+<span class="text-5xl font-extrabold tracking-tight">$0</span>
+<span class="ml-1 text-on-surface-variant text-lg">/month</span>
+</div>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="check_circle">check_circle</span>
+                        1 store
+                    </li>
+<li class="flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="check_circle">check_circle</span>
+                        Up to 10 products
+                    </li>
+<li class="flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="check_circle">check_circle</span>
+                        Basic dashboard
+                    </li>
+<li class="flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="check_circle">check_circle</span>
+                        Basic checkout (PIX)
+                    </li>
+</ul>
+<button class="w-full py-4 px-6 rounded-lg bg-surface-container-high text-on-surface font-semibold transition-all hover:bg-surface-dim active:scale-[0.98]">
+                    Start Free
+                </button>
+</section>
+<!-- Pro Plan (Highlighted) -->
+<section class="relative flex flex-col p-8 rounded-xl bg-surface-container-lowest shadow-[0_12px_32px_-4px_rgba(70,72,212,0.12)] ring-2 ring-primary transition-all duration-300 hover:translate-y-[-4px] transform md:scale-105 z-10">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-widest uppercase">
+                    Most Popular
+                </div>
+<div class="mb-8">
+<span class="text-sm font-bold tracking-widest text-primary uppercase">PRO</span>
+<div class="mt-4 flex items-baseline">
+<span class="text-5xl font-extrabold tracking-tight">$19</span>
+<span class="ml-1 text-on-surface-variant text-lg">/month</span>
+</div>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center text-on-surface">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        1 store
+                    </li>
+<li class="flex items-center text-on-surface">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Unlimited products
+                    </li>
+<li class="flex items-center text-on-surface">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Advanced dashboard
+                    </li>
+<li class="flex items-center text-on-surface">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Order management
+                    </li>
+<li class="flex items-center text-on-surface">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Custom branding
+                    </li>
+</ul>
+<button class="w-full py-4 px-6 rounded-lg bg-gradient-to-br from-primary to-primary-container text-white font-semibold shadow-lg shadow-primary/20 transition-all hover:opacity-90 active:scale-[0.98]">
+                    Upgrade to Pro
+                </button>
+</section>
+<!-- Max Plan -->
+<section class="flex flex-col p-8 rounded-xl bg-surface-container-low transition-all duration-300 hover:translate-y-[-4px]">
+<div class="mb-8">
+<span class="text-sm font-bold tracking-widest text-on-surface-variant uppercase">MAX</span>
+<div class="mt-4 flex items-baseline">
+<span class="text-5xl font-extrabold tracking-tight">$49</span>
+<span class="ml-1 text-on-surface-variant text-lg">/month</span>
+</div>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="check_circle">check_circle</span>
+                        Multiple stores
+                    </li>
+<li class="flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="check_circle">check_circle</span>
+                        Advanced analytics
+                    </li>
+<li class="flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="check_circle">check_circle</span>
+                        Priority processing
+                    </li>
+<li class="flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-primary mr-3" data-icon="check_circle">check_circle</span>
+                        Custom domain (future)
+                    </li>
+</ul>
+<button class="w-full py-4 px-6 rounded-lg bg-surface-container-high text-on-surface font-semibold transition-all hover:bg-surface-dim active:scale-[0.98]">
+                    Go Max
+                </button>
+</section>
+</div>
+<!-- Trust Section (Editorial Style) -->
+<section class="mt-32 p-12 rounded-xl bg-surface-container-low text-center">
+<h2 class="text-sm font-bold tracking-widest text-on-secondary-container uppercase mb-12">Trusted by global merchants</h2>
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all">
+<span class="text-2xl font-black tracking-tighter">METRIC</span>
+<span class="text-2xl font-black tracking-tighter">FLOW</span>
+<span class="text-2xl font-black tracking-tighter">ELEMENT</span>
+<span class="text-2xl font-black tracking-tighter">STRUCTURE</span>
+<span class="text-2xl font-black tracking-tighter">NEXUS</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 bg-slate-50 dark:bg-slate-950 font-['Inter'] text-sm leading-relaxed">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto border-t border-slate-200 dark:border-slate-800 pt-12">
+<div class="mb-6 md:mb-0">
+<div class="text-lg font-bold text-slate-900 dark:text-slate-50 mb-2">Next Gen</div>
+<div class="text-slate-500 dark:text-slate-400">© 2024 Next Gen Technologies. All rights reserved.</div>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-opacity underline-offset-4 hover:underline" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-opacity underline-offset-4 hover:underline" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-opacity underline-offset-4 hover:underline" href="#">Cookie Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-opacity underline-offset-4 hover:underline" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

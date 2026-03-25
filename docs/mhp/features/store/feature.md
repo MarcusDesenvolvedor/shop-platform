@@ -12,8 +12,10 @@ Define and implement the store feature as the multi-tenant root, allowing authen
 4. Service enforces business constraints:
    - User can have at most one store.
    - Store slug must be globally unique.
-5. Repository persists and retrieves store data using Prisma.
-6. Owner fetches:
+5. Store creation initializes base store data:
+   - A default category is created automatically (`General`).
+6. Repository persists and retrieves store data using Prisma.
+7. Owner fetches:
    - Own stores list.
    - Store by slug with ownership validation.
 
@@ -25,6 +27,7 @@ Define and implement the store feature as the multi-tenant root, allowing authen
   - lowercase
   - spaces replaced by `_`
 - Slug must be unique across the platform.
+- A newly created store must include one default category (`General`).
 - Private store data access must validate ownership.
 - All downstream features must resolve store context by slug and ownership.
 

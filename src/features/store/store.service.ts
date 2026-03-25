@@ -7,6 +7,8 @@ import {
 } from "./store.repository";
 import type { CreateStoreInput, Store, UpdateStoreInput } from "./store.types";
 
+const DEFAULT_STORE_CATEGORY_NAME = "General";
+
 export class StoreConflictError extends Error {
   constructor(message: string) {
     super(message);
@@ -50,6 +52,7 @@ export async function createStoreForOwner(ownerUserId: string, input: CreateStor
     userId: ownerUserId,
     name: input.name.trim(),
     slug,
+    defaultCategoryName: DEFAULT_STORE_CATEGORY_NAME,
   });
 }
 

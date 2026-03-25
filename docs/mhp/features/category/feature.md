@@ -19,6 +19,7 @@ Define and implement the category feature for organizing products within a store
 - Category name must be unique per store (not globally).
 - Categories are used for product filtering and organization.
 - A category cannot be deleted while products still reference it.
+- A store must keep at least one category; deleting the only category is not allowed.
 
 ## Entities Involved
 

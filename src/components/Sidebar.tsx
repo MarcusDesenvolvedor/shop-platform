@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Boxes, LayoutGrid, Package, Settings, ShoppingCart } from "lucide-react";
+import { SignOutButton } from "@clerk/nextjs";
+import { Boxes, LayoutGrid, LogOut, Package, Settings, ShoppingCart } from "lucide-react";
 import type { ComponentType } from "react";
 import { cn } from "@/lib/utils";
 import { useDashboardStore } from "@/lib/dashboard-store-context";
@@ -63,9 +64,20 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className="mt-auto rounded-xl border border-slate-200 bg-slate-50 p-3">
-        <p className="truncate text-sm font-medium text-slate-900">{userName}</p>
-        <p className="text-xs text-slate-500">Store Owner</p>
+      <div className="mt-auto space-y-3 rounded-xl border border-slate-200 bg-slate-50 p-3">
+        <div>
+          <p className="truncate text-sm font-medium text-slate-900">{userName}</p>
+          <p className="text-xs text-slate-500">Store Owner</p>
+        </div>
+        <SignOutButton redirectUrl="/">
+          <button
+            type="button"
+            className="flex w-full items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
+          >
+            <LogOut className="h-4 w-4" />
+            Logout
+          </button>
+        </SignOutButton>
       </div>
     </aside>
   );

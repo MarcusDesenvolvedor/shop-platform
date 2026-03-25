@@ -147,7 +147,7 @@ export function CategoriesTable({ categories }: CategoriesTableProps) {
         onOpenChange={(open) => { if (!open) setDeleteCategory(undefined); }}
         onConfirm={handleDelete}
         title="Delete category"
-        description="Are you sure you want to delete this category? Categories with products cannot be deleted."
+        description="Are you sure you want to delete this category? Categories with products cannot be deleted, and your store must keep at least one category."
         isDeleting={isDeleting}
       />
     </>

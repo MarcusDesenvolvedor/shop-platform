@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4648d4",
+              "inverse-surface": "#2d3133",
+              "secondary": "#515f74",
+              "primary-container": "#6063ee",
+              "outline-variant": "#c7c4d7",
+              "on-tertiary-container": "#fffbff",
+              "on-background": "#191c1e",
+              "surface-container": "#eceef0",
+              "surface": "#f7f9fb",
+              "on-secondary-fixed": "#0d1c2e",
+              "on-secondary-container": "#57657a",
+              "surface-variant": "#e0e3e5",
+              "surface-container-highest": "#e0e3e5",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "surface-dim": "#d8dadc",
+              "surface-tint": "#494bd6",
+              "inverse-primary": "#c0c1ff",
+              "inverse-on-surface": "#eff1f3",
+              "background": "#f7f9fb",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#c0c1ff",
+              "on-tertiary-fixed-variant": "#703700",
+              "on-primary-fixed": "#07006c",
+              "error-container": "#ffdad6",
+              "surface-container-high": "#e6e8ea",
+              "on-surface": "#191c1e",
+              "on-secondary-fixed-variant": "#3a485b",
+              "tertiary-fixed-dim": "#ffb783",
+              "secondary-container": "#d5e3fc",
+              "tertiary": "#904900",
+              "secondary-fixed-dim": "#b9c7df",
+              "on-error": "#ffffff",
+              "tertiary-container": "#b55d00",
+              "on-primary": "#ffffff",
+              "secondary-fixed": "#d5e3fc",
+              "on-surface-variant": "#464554",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#ffdcc5",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "outline": "#767586",
+              "primary-fixed": "#e1e0ff",
+              "on-primary-container": "#fffbff",
+              "surface-container-low": "#f2f4f6",
+              "on-tertiary-fixed": "#301400",
+              "error": "#ba1a1a",
+              "surface-bright": "#f7f9fb"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none font-['Inter'] antialiased tracking-tight">
+<div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-slate-900 dark:text-slate-50">Next Gen</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-indigo-600 dark:text-indigo-400 font-semibold transition-all duration-300 ease-in-out active:scale-95" href="#">Features</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors transition-all duration-300 ease-in-out active:scale-95" href="#">Pricing</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors transition-all duration-300 ease-in-out active:scale-95" href="#">Solutions</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors transition-all duration-300 ease-in-out active:scale-95" href="#">Resources</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block text-slate-600 dark:text-slate-400 font-medium px-4 py-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-lg transition-all duration-300 ease-in-out active:scale-95">Log In</button>
+<button class="bg-indigo-600 dark:bg-indigo-500 text-white px-5 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300 ease-in-out active:scale-95">Get Started</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 py-20 text-center">
+<div class="mb-4">
+<span class="text-primary font-semibold tracking-widest text-xs uppercase bg-secondary-container px-3 py-1 rounded-full">Platform Overview</span>
+</div>
+<h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-on-surface mb-6 leading-tight">
+                Everything you need to <br class="hidden md:block"/> run your store
+            </h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-16 leading-relaxed">
+                Powering the next generation of online commerce with high-performance tools designed for modern merchants.
+            </p>
+<!-- Feature Bento Grid / Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+<!-- Feature Card 1 -->
+<div class="group relative bg-surface-container-lowest p-10 rounded-xl shadow-[0_12px_32px_-4px_rgba(25,28,30,0.06)] hover:shadow-[0_20px_48px_-8px_rgba(70,72,212,0.12)] transition-all duration-500 border border-outline-variant/10">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="store">store</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-4">Easy Store Creation</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                        Create your online store in minutes with a simple and intuitive interface designed to reduce friction and boost speed.
+                    </p>
+<div class="relative overflow-hidden rounded-lg aspect-video bg-surface-container-low mt-auto">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" data-alt="clean minimal dashboard interface with a white color scheme showing website builder elements and drag-and-drop components" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFcX8ModkFrN3jg1x8nBlHHxWobvJm2ISyX-hAuvBPM2U9JiFT9awdPWOwZv3fEVetrpg2r4EBCFUlaZJHX8iZcxoo7nywmX5Gwck-HZylh5IsA44QSdG1fU-Jq_IAzz9N5pXCrD1E1v_FfojPI_0tVgrRQh6w5Vqz2UPfItKlymp7EidvKBD441Q71i2_jPwOKT1uGpD4hwT2uGzN73dJMysP8uyMYLop6buB05asyagSGJCc3xZGGsH87n7BNWrdO6ek5N5EG-Bh"/>
+</div>
+</div>
+<!-- Feature Card 2 -->
+<div class="group relative bg-surface-container-lowest p-10 rounded-xl shadow-[0_12px_32px_-4px_rgba(25,28,30,0.06)] hover:shadow-[0_20px_48px_-8px_rgba(70,72,212,0.12)] transition-all duration-500 border border-outline-variant/10">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="inventory_2">inventory_2</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-4">Product Management</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                        Add, edit, and organize your products with ease. Manage variations, pricing, and SEO settings from a single command center.
+                    </p>
+<div class="relative overflow-hidden rounded-lg aspect-video bg-surface-container-low mt-auto">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" data-alt="neatly organized warehouse shelf or product grid with a modern aesthetic and soft shadows and neutral studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA_ouBJA6Z5EUbmB-PjOowSgGL4DPdBfFljC8ls-IMT1sVDXLuGKrA90JNg2cE2GEX_jqxI1eGFPy1enIRyTzh7ON9xg7as2R5bM-OiGuPXcZ07fthezIukpQeCcg8Umvwm-XvktDdyBaxkSVQ76qcs_CeiXcFxRgnL66Tp_S_RtV8fymH2uxCtvBJZ-67sW4320MjY7ed5NbErbSqo5iCkP7YffJn8qVOiPpnxB0BxeCt_jPXu-5UGd51t4myMuA6xODKAlowA30h"/>
+</div>
+</div>
+<!-- Feature Card 3 -->
+<div class="group relative bg-surface-container-lowest p-10 rounded-xl shadow-[0_12px_32px_-4px_rgba(25,28,30,0.06)] hover:shadow-[0_20px_48px_-8px_rgba(70,72,212,0.12)] transition-all duration-500 border border-outline-variant/10">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="monitoring">monitoring</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-4">Order Tracking</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                        Track orders and manage your sales in real time. Advanced analytics provide insights into customer behavior and revenue trends.
+                    </p>
+<div class="relative overflow-hidden rounded-lg aspect-video bg-surface-container-low mt-auto">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" data-alt="abstract business data chart with soft indigo glowing lines on a white background representing growth and tracking" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPVT2Wbqkqm8AemICINJ5SlI6ENFC2FFBZRFEqoAagNdHoQeoTvL7LQ8mNIZv7JF9bwpudxv-Qr237MqLJeFGGog8YoL_jvw4afTJ1nYxblRRwax1Un-guTnb1W1yYZTPXF2fAjCDRysAigmWSCsIPxrYUAcnvZyfBmhReplrE40JU6OLAD1b2ASwQ09hba6-_C-fCd1_h8nrvNXT5Jh3E6hJ328vMzyztbYqpynvncA2Q_4vVtmHkjlVCsSHZ1hzQ3ldbPA4uQ3ez"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Section (Editorial Layout) -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="absolute inset-0 bg-primary/5 rounded-3xl -rotate-2 scale-105"></div>
+<div class="relative bg-surface-container-lowest p-2 rounded-2xl shadow-xl overflow-hidden">
+<img class="w-full h-auto rounded-xl" data-alt="high-end office workspace with a minimalist design featuring a laptop and organized stationary in warm natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU2eZ_K-j66GrOPtOa4RuUPgFwzFTaynl1-IbZw4vI4HamrMWJZqMjCdWa5bD3DxeVRi_RZE3RTlP9Q8oAdrxr1lQvQEOXPz5k3qMPGdUtd97XbQRaHiFT5Omo-McdyLhiN7LYN6aZWfSxj5F8lfRnQQ2BJds59dpnnGGFxkdpunQVqw577rp2XFm0MloU7cp80HqpSzOGusu5b_S8jyqhcwaOmyag8HRUqnXpiZWXdUVYvAWdjjrLT0K4BbOSRez4-jX0efZdj-B_"/>
+</div>
+</div>
+<div>
+<h2 class="text-3xl font-bold text-on-surface mb-6 tracking-tight">Built for scale, <br/> refined for conversion.</h2>
+<p class="text-on-surface-variant mb-8 leading-relaxed text-lg">
+                        We don't just provide a platform; we provide a foundation. Every pixel is optimized to ensure your customers have a seamless checkout experience that mirrors the quality of your products.
+                    </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary font-bold" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium">99.9% Platform Uptime</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary font-bold" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium">Global CDN edge hosting</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary font-bold" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium">Enterprise-grade security</span>
+</li>
+</ul>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300" href="#">
+                        Explore all features 
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-12 px-6">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto border-t border-slate-200 dark:border-slate-800 pt-12">
+<div class="mb-8 md:mb-0">
+<span class="text-lg font-bold text-slate-900 dark:text-slate-50">Next Gen</span>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-2">© 2024 Next Gen Technologies. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-sm text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-opacity underline-offset-4 hover:underline" href="#">Privacy Policy</a>
+<a class="text-sm text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-opacity underline-offset-4 hover:underline" href="#">Terms of Service</a>
+<a class="text-sm text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-opacity underline-offset-4 hover:underline" href="#">Cookie Policy</a>
+<a class="text-sm text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-opacity underline-offset-4 hover:underline" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

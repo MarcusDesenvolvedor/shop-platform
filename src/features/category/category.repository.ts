@@ -49,3 +49,9 @@ export async function countProductsByCategoryId(categoryId: string): Promise<num
     where: { categoryId },
   });
 }
+
+export async function countCategoriesByStoreId(storeId: string): Promise<number> {
+  return prisma.category.count({
+    where: { storeId },
+  });
+}

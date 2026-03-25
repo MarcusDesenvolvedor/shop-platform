@@ -1,4 +1,5 @@
 import {
+  countCategoriesByStoreId,
   countProductsByCategoryId,
   createCategory,
   deleteCategory,
@@ -82,6 +83,14 @@ export async function updateCategoryForStore(
 
 export async function deleteCategoryForStore(storeId: string, categoryId: string): Promise<void> {
   const category = await requireCategoryInStore(storeId, categoryId);
+  const categoriesCount = await countCategoriesByStoreId(storeId);
+
+  if (categoriesCount <= 1) {
+    throw new CategoryConflictError(
+      "Cannot delete the only category in the store. Create another category first."
+    );
+  }
+
   const productCount = await countProductsByCategoryId(category.id);
 
   if (productCount > 0) {
