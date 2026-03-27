@@ -14,12 +14,14 @@ import type { Store } from "@/features/store/store.types";
 
 type StoreSettingsFormValues = {
   name: string;
+  coverImageUrl: string;
 };
 
 type StoreSettingsFormProps = {
   store: {
     name: string;
     slug: string;
+    coverImageUrl: string | null;
   };
   userEmail: string;
   userName: string;
@@ -34,12 +36,18 @@ export function StoreSettingsForm({ store, userEmail, userName }: StoreSettingsF
     handleSubmit,
     formState: { errors, isSubmitting, isDirty },
   } = useForm<StoreSettingsFormValues>({
-    defaultValues: { name: store.name },
+    defaultValues: {
+      name: store.name,
+      coverImageUrl: store.coverImageUrl ?? "",
+    },
   });
 
   async function onSubmit(values: StoreSettingsFormValues) {
     try {
-      await apiPatch<Store>(`/api/stores/${storeSlug}`, { name: values.name });
+      await apiPatch<Store>(`/api/stores/${storeSlug}`, {
+        name: values.name,
+        coverImageUrl: values.coverImageUrl.trim() ? values.coverImageUrl.trim() : null,
+      });
       toast.success("Store settings updated");
       router.refresh();
     } catch (error: unknown) {
@@ -59,10 +67,50 @@ export function StoreSettingsForm({ store, userEmail, userName }: StoreSettingsF
         <Card>
           <CardHeader>
             <CardTitle>Store information</CardTitle>
-            <CardDescription>Update your store name. The slug is auto-generated.</CardDescription>
+            <CardDescription>
+              Update your store name and the hero image on your public storefront. The slug is
+              auto-generated from the name.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="store-cover-image">Store cover image (public)</Label>
+                <Input
+                  id="store-cover-image"
+                  type="url"
+                  placeholder="https://example.com/banner.jpg"
+                  {...register("coverImageUrl", {
+                    validate: (value) => {
+                      const trimmed = value.trim();
+                      if (!trimmed) {
+                        return true;
+                      }
+                      if (trimmed.length > 16384) {
+                        return "URL is too long (max 16384 characters)";
+                      }
+                      try {
+                        const u = new URL(trimmed);
+                        if (u.protocol !== "http:" && u.protocol !== "https:") {
+                          return "Use an https:// or http:// image link";
+                        }
+                        return true;
+                      } catch {
+                        return "Enter a valid image URL";
+                      }
+                    },
+                  })}
+                />
+                {errors.coverImageUrl ? (
+                  <p className="text-sm text-destructive">{errors.coverImageUrl.message}</p>
+                ) : (
+                  <p className="text-xs text-slate-500">
+                    Shown as the main photo on your public store page. Leave empty to use the first
+                    product image as fallback.
+                  </p>
+                )}
+              </div>
+
               <div className="space-y-2">
                 <Label htmlFor="store-name">Store name</Label>
                 <Input

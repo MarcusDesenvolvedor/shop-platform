@@ -15,7 +15,7 @@ export default async function SettingsPage() {
 
   return (
     <StoreSettingsForm
-      store={{ name: store.name, slug: store.slug }}
+      store={{ name: store.name, slug: store.slug, coverImageUrl: store.coverImageUrl }}
       userEmail={authUser.email}
       userName={userName}
     />

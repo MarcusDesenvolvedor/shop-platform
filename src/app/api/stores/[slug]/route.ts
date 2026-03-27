@@ -1,3 +1,4 @@
+import { Prisma } from "@prisma/client";
 import { NextResponse } from "next/server";
 import { storeSlugParamsSchema, updateStoreSchema } from "@/features/store/store.schema";
 import {
@@ -28,6 +29,7 @@ export async function GET(_request: Request, context: RouteContext) {
         id: store.id,
         name: store.name,
         slug: store.slug,
+        coverImageUrl: store.coverImageUrl,
       },
     });
   } catch (error: unknown) {
@@ -51,7 +53,13 @@ export async function PATCH(request: Request, context: RouteContext) {
   const parsedBody = updateStoreSchema.safeParse(body);
 
   if (!parsedBody.success) {
-    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+    const first = parsedBody.error.issues[0];
+    return NextResponse.json(
+      {
+        error: first?.message ?? "Invalid request body",
+      },
+      { status: 400 }
+    );
   }
 
   try {
@@ -77,6 +85,30 @@ export async function PATCH(request: Request, context: RouteContext) {
 
     if (error instanceof Error && error.message === "Unauthorized") {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    if (error instanceof Error && error.message === "Unable to load Clerk user") {
+      return NextResponse.json({ error: error.message }, { status: 503 });
+    }
+
+    if (error instanceof Error && error.message === "Authenticated user does not have an email address") {
+      return NextResponse.json({ error: error.message }, { status: 422 });
+    }
+
+    if (error instanceof Prisma.PrismaClientKnownRequestError) {
+      if (error.code === "P2022") {
+        return NextResponse.json(
+          {
+            error:
+              "Database is missing a required column (e.g. coverImageUrl). Run: npx prisma db push",
+          },
+          { status: 503 }
+        );
+      }
+    }
+
+    if (process.env.NODE_ENV === "development") {
+      console.error("[PATCH /api/stores/[slug]]", error);
     }
 
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });

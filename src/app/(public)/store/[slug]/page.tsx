@@ -13,6 +13,7 @@ type StoreApiData = {
   id: string;
   name: string;
   slug: string;
+  coverImageUrl: string | null;
 };
 
 type ProductApiData = {

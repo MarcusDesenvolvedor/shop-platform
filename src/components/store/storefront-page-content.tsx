@@ -35,6 +35,7 @@ type StorefrontPageContentProps = {
     id: string;
     name: string;
     slug: string;
+    coverImageUrl?: string | null;
   };
   products: StorefrontProduct[];
   searchableProducts: SearchableProduct[];
@@ -66,6 +67,9 @@ export function StorefrontPageContent({
   currentPage,
   totalPages,
 }: StorefrontPageContentProps) {
+  const heroImageUrl = store.coverImageUrl?.trim() || products[0]?.imageUrl;
+  const heroImageAlt = store.coverImageUrl?.trim() ? store.name : products[0]?.name ?? store.name;
+
   const [cartEntries, setCartEntries] = useState<CartEntry[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const router = useRouter();
@@ -218,11 +222,11 @@ export function StorefrontPageContent({
               <div className="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-[#4648d4]/10 blur-3xl" />
               <div className="absolute -bottom-10 -left-10 h-48 w-48 rounded-full bg-[#b55d00]/10 blur-3xl" />
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl">
-                {products[0]?.imageUrl ? (
+                {heroImageUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
-                    src={products[0].imageUrl}
-                    alt={products[0].name}
+                    src={heroImageUrl}
+                    alt={heroImageAlt}
                     className="h-full w-full object-cover"
                   />
                 ) : (

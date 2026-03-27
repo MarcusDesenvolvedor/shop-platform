@@ -93,7 +93,7 @@ export async function updateStoreForOwner(
 ): Promise<Store> {
   const store = await getOwnedStoreBySlug(ownerUserId, slug);
 
-  const updateData: { name?: string; slug?: string } = {};
+  const updateData: { name?: string; slug?: string; coverImageUrl?: string | null } = {};
 
   if (input.name !== undefined) {
     const trimmedName = input.name.trim();
@@ -108,6 +108,11 @@ export async function updateStoreForOwner(
 
     updateData.name = trimmedName;
     updateData.slug = newSlug;
+  }
+
+  if (input.coverImageUrl !== undefined) {
+    const v = input.coverImageUrl;
+    updateData.coverImageUrl = v === null || v === "" ? null : v.trim();
   }
 
   if (Object.keys(updateData).length === 0) {

@@ -3,6 +3,7 @@ export type Store = {
   userId: string;
   name: string;
   slug: string;
+  coverImageUrl: string | null;
   createdAt: Date;
   updatedAt: Date;
 };
@@ -13,6 +14,7 @@ export type CreateStoreInput = {
 
 export type UpdateStoreInput = {
   name?: string;
+  coverImageUrl?: string | null;
 };
 
 export type StoreSlugParams = {

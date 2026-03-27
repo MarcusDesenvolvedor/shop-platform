@@ -46,7 +46,7 @@ export async function listStoresByUserId(userId: string): Promise<StoreRecord[]>
 
 export async function updateStore(
   storeId: string,
-  data: { name?: string; slug?: string }
+  data: { name?: string; slug?: string; coverImageUrl?: string | null }
 ): Promise<StoreRecord> {
   return prisma.store.update({
     where: { id: storeId },
