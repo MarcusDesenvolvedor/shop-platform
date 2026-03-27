@@ -4,9 +4,9 @@ import {
   StoreConflictError,
   StoreForbiddenError,
   StoreNotFoundError,
+  getStoreBySlug,
   updateStoreForOwner,
 } from "@/features/store/store.service";
-import { requireOwnedStoreBySlug } from "@/lib/store";
 import { requireSynchronizedAuthUser } from "@/lib/auth";
 
 type RouteContext = {
@@ -22,19 +22,17 @@ export async function GET(_request: Request, context: RouteContext) {
   }
 
   try {
-    const store = await requireOwnedStoreBySlug(parsedParams.data.slug);
-    return NextResponse.json({ data: store });
+    const store = await getStoreBySlug(parsedParams.data.slug);
+    return NextResponse.json({
+      data: {
+        id: store.id,
+        name: store.name,
+        slug: store.slug,
+      },
+    });
   } catch (error: unknown) {
     if (error instanceof StoreNotFoundError) {
       return NextResponse.json({ error: error.message }, { status: 404 });
-    }
-
-    if (error instanceof StoreForbiddenError) {
-      return NextResponse.json({ error: error.message }, { status: 403 });
-    }
-
-    if (error instanceof Error && error.message === "Unauthorized") {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });

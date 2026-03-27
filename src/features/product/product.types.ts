@@ -20,6 +20,8 @@ export type Product = {
   images: ProductImage[];
 };
 
+export type ProductListSort = "latest" | "best_sellers";
+
 export type ProductImageInput = {
   url: string;
 };

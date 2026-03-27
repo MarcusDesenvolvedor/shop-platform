@@ -34,6 +34,12 @@ export const productIdParamsSchema = z.object({
   productId: z.string().trim().uuid(),
 });
 
+export const listProductsQuerySchema = z.object({
+  storeId: z.string().trim().uuid(),
+  sort: z.enum(["latest", "best_sellers"]).optional(),
+});
+
 export type CreateProductPayload = z.infer<typeof createProductSchema>;
 export type UpdateProductPayload = z.infer<typeof updateProductSchema>;
 export type ProductIdParamsPayload = z.infer<typeof productIdParamsSchema>;
+export type ListProductsQueryPayload = z.infer<typeof listProductsQuerySchema>;

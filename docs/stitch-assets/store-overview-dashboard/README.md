@@ -9,6 +9,12 @@ Downloaded files:
 
 Additional screen:
 
+- Screen title: `Next Gen Storefront`
+- Screen ID: `b00e032db26543b397e4a3151c7813b1`
+- Files:
+  - `next-gen-storefront/screen.png` (screenshot)
+  - `next-gen-storefront/screen.html` (generated code)
+
 - Screen title: `Next Gen Landing Page`
 - Screen ID: `5a06e510f510445795e731c6c9e3eb0a`
 - Files:

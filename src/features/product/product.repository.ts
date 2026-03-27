@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import type { Product, ProductImage } from "./product.types";
+import type { Product, ProductImage, ProductListSort } from "./product.types";
 
 type ProductRecordWithImages = {
   id: string;
@@ -86,7 +86,46 @@ export async function listProductsByStoreId(storeId: string): Promise<Product[]>
   return products.map(mapProductRecord);
 }
 
-export async function listActiveProductsByStoreId(storeId: string): Promise<Product[]> {
+export async function listActiveProductsByStoreId(
+  storeId: string,
+  sort: ProductListSort = "latest"
+): Promise<Product[]> {
+  if (sort === "latest") {
+    const products = await prisma.product.findMany({
+      where: { storeId, isActive: true },
+      include: {
+        images: {
+          orderBy: { createdAt: "asc" },
+        },
+      },
+      orderBy: { createdAt: "desc" },
+    });
+
+    return products.map(mapProductRecord);
+  }
+
+  const soldAgg = await prisma.orderItem.groupBy({
+    by: ["productId"],
+    where: {
+      order: {
+        storeId,
+        status: "PAID",
+      },
+      product: {
+        storeId,
+        isActive: true,
+      },
+    },
+    _sum: {
+      quantity: true,
+    },
+  });
+
+  const soldByProductId = new Map<string, number>();
+  for (const row of soldAgg) {
+    soldByProductId.set(row.productId, row._sum.quantity ?? 0);
+  }
+
   const products = await prisma.product.findMany({
     where: { storeId, isActive: true },
     include: {
@@ -94,10 +133,20 @@ export async function listActiveProductsByStoreId(storeId: string): Promise<Prod
         orderBy: { createdAt: "asc" },
       },
     },
-    orderBy: { createdAt: "desc" },
   });
 
-  return products.map(mapProductRecord);
+  const sorted = [...products].sort((a, b) => {
+    const soldA = soldByProductId.get(a.id) ?? 0;
+    const soldB = soldByProductId.get(b.id) ?? 0;
+
+    if (soldA !== soldB) {
+      return soldB - soldA;
+    }
+
+    return b.createdAt.getTime() - a.createdAt.getTime();
+  });
+
+  return sorted.map(mapProductRecord);
 }
 
 export async function findProductByIdAndStore(productId: string, storeId: string): Promise<Product | null> {

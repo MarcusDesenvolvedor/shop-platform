@@ -9,7 +9,7 @@ import {
   listProductsByStoreId,
   updateProduct,
 } from "./product.repository";
-import type { CreateProductInput, Product, UpdateProductInput } from "./product.types";
+import type { CreateProductInput, Product, ProductListSort, UpdateProductInput } from "./product.types";
 
 export class ProductNotFoundError extends Error {
   constructor(message: string) {
@@ -102,6 +102,13 @@ export async function createProductForStore(storeId: string, input: CreateProduc
 
 export async function listProductsForStore(storeId: string): Promise<Product[]> {
   return listProductsByStoreId(storeId);
+}
+
+export async function listActiveProductsForStore(
+  storeId: string,
+  sort: ProductListSort = "latest"
+): Promise<Product[]> {
+  return listActiveProductsByStoreId(storeId, sort);
 }
 
 export async function listActiveProductsByStoreSlug(storeSlug: string): Promise<Product[]> {

@@ -2,16 +2,17 @@
 
 ## Purpose
 
-Define and implement the public storefront experience, allowing visitors to browse active products by store slug and open product detail pages.
+Define and implement the public storefront experience, allowing visitors to browse active products by store slug, add products to a session cart, and open product detail pages.
 
 ## Main Flows
 
 1. Visitor accesses a store using `/store/{slug}`.
 2. Route resolves store context by slug.
 3. System lists only active store products.
-4. Visitor optionally filters products by category.
-5. Visitor opens product details at `/store/{slug}/product/{id}`.
-6. Product detail only renders active products from the same store.
+4. Visitor adds products to cart from the storefront.
+5. Visitor updates quantities or removes products in the cart panel.
+6. Visitor opens product details at `/store/{slug}/product/{id}`.
+7. Product detail only renders active products from the same store.
 
 ## Business Rules
 
@@ -19,7 +20,10 @@ Define and implement the public storefront experience, allowing visitors to brow
 - Store context must always be resolved by `slug`.
 - Only active products are visible in public pages.
 - Product detail must not expose inactive products.
-- Categories are used for browsing/filtering only.
+- Cart is local state for the current session.
+- Cart items track only `productId` and `quantity`.
+- Add to cart must be disabled when stock is `0`.
+- Cart quantity must stay between `1` and product stock.
 - Data must remain fully isolated by store.
 
 ## Entities Involved
@@ -46,6 +50,14 @@ Define and implement the public storefront experience, allowing visitors to brow
 - Product listing displays:
   - Primary image (if available).
   - Name, short description, price, and stock.
+  - Add to cart action.
+- Storefront header displays:
+  - Store name.
+  - Cart button with total item count.
+- Cart panel displays:
+  - Cart items.
+  - Quantity update controls.
+  - Remove action.
 - Product detail displays:
   - Product image, title, brand (optional), description, price, and stock.
 - Missing store or product renders 404.
@@ -55,6 +67,7 @@ Define and implement the public storefront experience, allowing visitors to brow
 - Store feature (slug resolution).
 - Category feature (category navigation).
 - Product feature (active product listing and detail).
+- Cart feature (session cart behavior and constraints).
 - Next.js App Router for public routing.
 
 ## References

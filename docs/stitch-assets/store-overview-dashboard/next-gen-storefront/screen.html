@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Next Gen | Premium Editorial Commerce</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#eceef0",
+              "inverse-primary": "#c0c1ff",
+              "outline-variant": "#c7c4d7",
+              "on-surface": "#191c1e",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#b55d00",
+              "tertiary": "#904900",
+              "surface-dim": "#d8dadc",
+              "on-surface-variant": "#464554",
+              "tertiary-fixed": "#ffdcc5",
+              "inverse-on-surface": "#eff1f3",
+              "on-primary-fixed": "#07006c",
+              "primary-container": "#6063ee",
+              "on-secondary-fixed-variant": "#3a485b",
+              "surface-variant": "#e0e3e5",
+              "tertiary-fixed-dim": "#ffb783",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "surface-tint": "#494bd6",
+              "surface-container-low": "#f2f4f6",
+              "on-tertiary-fixed-variant": "#703700",
+              "primary-fixed-dim": "#c0c1ff",
+              "on-secondary-fixed": "#0d1c2e",
+              "inverse-surface": "#2d3133",
+              "on-background": "#191c1e",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#e0e3e5",
+              "primary": "#4648d4",
+              "on-secondary-container": "#57657a",
+              "error-container": "#ffdad6",
+              "background": "#f7f9fb",
+              "surface-container-high": "#e6e8ea",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#fffbff",
+              "on-error": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-tertiary-container": "#fffbff",
+              "secondary-fixed": "#d5e3fc",
+              "on-tertiary-fixed": "#301400",
+              "secondary-fixed-dim": "#b9c7df",
+              "primary-fixed": "#e1e0ff",
+              "surface": "#f7f9fb",
+              "secondary-container": "#d5e3fc",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "secondary": "#515f74",
+              "surface-bright": "#f7f9fb",
+              "outline": "#767586"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-bg {
+            background-color: #f2f4f6;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none transition-colors duration-200 ease-in-out">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-12">
+<a class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white" href="#">Next Gen</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-indigo-600 dark:text-indigo-400 font-semibold border-b-2 border-indigo-600 font-sans antialiased tracking-tight" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors duration-200 ease-in-out font-sans antialiased tracking-tight" href="#">Categories</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden sm:flex items-center bg-surface-container-low rounded-full px-4 py-2 border border-outline-variant/20 focus-within:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 font-medium" placeholder="Search products..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-on-surface-variant hover:text-primary transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">3</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border-2 border-primary/20 hover:border-primary transition-colors cursor-pointer active:scale-95 transition-transform">
+<img alt="User profile" class="h-full w-full object-cover" data-alt="close-up portrait of a professional man with a friendly expression in a clean studio setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBPE0VpC-kji1ajyfA-gg79sFF6cv82-oQl1OmoGSjmir6m9QnFAKXfbWaL8Ep0PvKgLAFJH8PgnqH7g3pGUP5Kj2hU9c28k8Pq2vU5pnwOFgGHazC4_wTT6GNGPQQigJ7K46oN_Rf7pqX5GQKksDyrzBGXMl34fDCwVsgCc2MaTTNAVe6seINE8hWIFWSpWC9cglWQpM-Fgk7W51_vri1LFgG7uIkpTBE5Lubph2FitmStlx4d7mlQ0Db1uH1X6-pU8tNTOYbgG66"/>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-surface py-20 md:py-32">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6">Established 2024</span>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-6 leading-[1.1]">
+                        Welcome to <span class="text-primary">Next Gen</span> Store
+                    </h1>
+<p class="text-xl text-on-surface-variant mb-10 max-w-lg leading-relaxed">
+                        Discover a curated collection of high-end electronics and lifestyle essentials designed for the modern professional.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+                            Shop All Products
+                        </button>
+<button class="px-8 py-4 bg-surface-container-high text-on-surface font-bold rounded-lg hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform">
+                            View Lookbook
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-12 -left-12 w-48 h-48 bg-tertiary-container/10 rounded-full blur-3xl"></div>
+<div class="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
+<img alt="Hero image" class="w-full h-full object-cover" data-alt="minimalist interior with sleek electronics and design objects on a white table with morning sunlight and long shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmy5N7u0aLbLtYLFD74Inzxwdepb7V-O_8yPpZzH-t5n_pjTXcX-06rS7gFQaiv8iQqvaTqLm0zWe9S9ldc6B6Z4RMJ8-MJ0nfILaXRqduZbjP409KKB3miWc5XyK7zg7kIETPjht6l5NtW1QEEfBmfhlJ1Wjfl_zsJVATVJ6PmBIzzlxtgFcJ4tvQyKvjFLNCOT2Tont4tiaIqxzo22I0lgZ2zCwMzHH7O80ILS1he2xN3l41FwV7DA5-jbM9HsdcX-rclE6O6DGV"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Catalog Section -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-6">
+<!-- Filters & Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+<div>
+<h2 class="text-3xl font-bold tracking-tight text-on-surface mb-2">Our Collection</h2>
+<p class="text-on-surface-variant">Carefully selected items for your digital lifestyle.</p>
+</div>
+<div class="flex flex-wrap gap-2 p-1 bg-surface-container-high rounded-xl">
+<button class="px-6 py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-bold shadow-sm text-sm transition-all">All</button>
+<button class="px-6 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-semibold text-sm transition-all">Electronics</button>
+<button class="px-6 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-semibold text-sm transition-all">Home</button>
+<button class="px-6 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-semibold text-sm transition-all">Lifestyle</button>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Product Card 1 -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-xl hover:shadow-on-surface/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img alt="Aero Wireless Headphones" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="studio shot of premium matte black wireless headphones on a clean neutral background with professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvkBhmwfjSV_WRB5HxQGiJuQGAnxsOWvEekLhumXvsXhWfjK5ssWtPkcRn3TgHbClhtcZEfZg_AUBkSFmtdXrqhmd6wQiSVGlXzLGTYUFAeWMJ6PXMBMV8JO7-PQw3RB2FZl0U3rGpdQTheXdnERAzeA9PooLdNTvOQ0mTw0FPoQq2ISLXlKXnEGcmyVrIiEzYMrqW5ui3UpANlvZvm0LUO-SncYz5uY0vnhv1foU_yhf5sVCvHdQ57DItw-buVqDjzOxy0cj26fPx"/>
+<span class="absolute top-4 left-4 px-3 py-1 bg-primary text-white text-[10px] font-black uppercase tracking-widest rounded-full">New Arrival</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4">
+<h3 class="text-lg font-bold text-on-surface mb-1 leading-tight">Aero Wireless Headphones</h3>
+<p class="text-sm text-on-surface-variant">Deep Bass &amp; Noise Canceling</p>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-black text-on-surface">$299.00</span>
+<button class="p-3 bg-surface-container-high text-on-surface rounded-lg hover:bg-primary hover:text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-xl hover:shadow-on-surface/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img alt="Lumina Smart Lamp" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern minimalist desk lamp with warm glow illuminating a wooden surface in a dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj8nOMzYeSf3WMjcRXe3My23HQog6Ly_pqssOkeDzHugqfurJXnTzGoL6OpiAa_zTiuBnRp6Bu2YnLsIGVVrtOZZc5hLn4b3iX_-4GOZ2M7NbWwIR5iF17mc1LjHjHpivb8O0kFh-_sKCBpd9n0StxoqwB9ojRjIl161giqPyNt67tekAXhBtFw94NQ38ZstzaHs2QBr1L14SNhS1VMXrrSprphn0MfJxaNaZkSijTaKaIYHVZRuRaO9gi92SpUXlxX7URk0P1nZis"/>
+<span class="absolute top-4 left-4 px-3 py-1 bg-error-container text-on-error-container text-[10px] font-black uppercase tracking-widest rounded-full">Low Stock</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4">
+<h3 class="text-lg font-bold text-on-surface mb-1 leading-tight">Lumina Smart Lamp</h3>
+<p class="text-sm text-on-surface-variant">Adaptive Ambient Lighting</p>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-black text-on-surface">$149.00</span>
+<button class="p-3 bg-surface-container-high text-on-surface rounded-lg hover:bg-primary hover:text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-xl hover:shadow-on-surface/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img alt="Titanium Watch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="luxury titanium watch with minimalist dial on a grey velvet surface with sharp lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaz4HHa5tUW_NT9xSqH9_boBnQZ1wYTK1jf6JwaKhaQumiFvU4DVPhwUAEgB5uPT87Os0SvQqXQrxudzkfvhLWl5eYM6ODgIkBOYDzGCKFC5orP2h5dcZ1YnHiqJ6240xO7p7Y0WRKx1RAZJJle_C-AWA8DJ_Fgsfe6cMVk1XswxERuQYyfaEIIQnpeuIhRTh99OcFQEB0VH7Y6wejdq41AhI6Eg2x3wsnguizttyNqDJcNTvRRc7OvR7JNiFkgrjVFn7dwaiI2F0H"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4">
+<h3 class="text-lg font-bold text-on-surface mb-1 leading-tight">Next Gen Chrono</h3>
+<p class="text-sm text-on-surface-variant">Titanium Edition 01</p>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-black text-on-surface">$550.00</span>
+<button class="p-3 bg-surface-container-high text-on-surface rounded-lg hover:bg-primary hover:text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden hover:shadow-xl hover:shadow-on-surface/5 transition-all duration-300">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img alt="Slate Tablet Pro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="high-tech tablet with digital pen on a clean studio surface with soft reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOdPI4UgK5gQsrPbxHluQHwPmjmWxNUYELamDUmemDRkZIAqbNZODw2po_4DsgyNRZ1iyIf-L3Ej3LsVBjiENUrdla3bmSSdkV2PRP8qziba0IszyvPOw2pSSyZVwCqyXgGsmYBldVPavfptk2wU8Sg6EZRNLszmPhDgbeboD3Nw7ioJ-aZHmRGEq8q6oFtjsVRizXkh4jLPAzNz6ZEzrn4zDQtFL-1MGfNUkMcAivh8tFH0REAlPThForh1R-U5OSGwVS_sgOqh8I"/>
+<span class="absolute top-4 left-4 px-3 py-1 bg-primary text-white text-[10px] font-black uppercase tracking-widest rounded-full">New Arrival</span>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4">
+<h3 class="text-lg font-bold text-on-surface mb-1 leading-tight">Slate Tablet Pro</h3>
+<p class="text-sm text-on-surface-variant">12.9" Liquid Retina Display</p>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xl font-black text-on-surface">$899.00</span>
+<button class="p-3 bg-surface-container-high text-on-surface rounded-lg hover:bg-primary hover:text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 flex justify-center">
+<button class="px-12 py-4 border border-outline-variant/30 text-on-surface font-bold rounded-lg hover:bg-white hover:shadow-md active:scale-95 transition-all">
+                        Load More Products
+                    </button>
+</div>
+</div>
+</section>
+<!-- Newsletter / Social Section -->
+<section class="bg-surface py-24 border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto px-6">
+<div class="bg-white rounded-[2rem] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12 shadow-sm border border-outline-variant/5">
+<div class="flex-1">
+<h2 class="text-4xl font-black tracking-tight text-on-surface mb-6">Stay in the loop.</h2>
+<p class="text-lg text-on-surface-variant mb-8 leading-relaxed max-w-md">
+                            Join 5,000+ merchants receiving our weekly editorial on technology, design, and commerce.
+                        </p>
+<form class="flex flex-col sm:flex-row gap-3">
+<input class="flex-grow px-6 py-4 rounded-lg bg-surface-container-low border-none focus:ring-2 focus:ring-primary/50 text-sm font-medium" placeholder="Enter your email" type="email"/>
+<button class="px-8 py-4 bg-on-surface text-white font-bold rounded-lg hover:bg-primary transition-colors" type="submit">Subscribe</button>
+</form>
+</div>
+<div class="flex-1 grid grid-cols-2 gap-4">
+<div class="aspect-square rounded-2xl overflow-hidden bg-surface-container">
+<img alt="Lifestyle" class="w-full h-full object-cover" data-alt="close-up of aesthetic desk setup with a mechanical keyboard and notebook" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBze8ogBAE00JPfN1WFa6M1CvG-MXx21Pp-H3141MZ6H6Twv0p_YRNjP7W_HCXMYetGotsfuBaeg77rNA8BiT0FL6kqmWbbviSJi3YrdsEa4RAjvjHyRXBjj1sBUWCJ4t93OEKIkMslZAqUseSuYg8YFeCifEtyUrRhRvpfLa4e7Jn9ep5Y8BdJOMojwW3SO3xqSI4Z-QVgGLqrObXDdKqPzBYGRQ26l9ejuPTUvbZt-jwBvbFrOqLMgxNKWSXIyVgQ_grMmZrAGVGL"/>
+</div>
+<div class="aspect-square rounded-2xl overflow-hidden bg-surface-container">
+<img alt="Lifestyle" class="w-full h-full object-cover" data-alt="modern tech office interior with large windows and plants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiCJSkOcCkO1xDvYYuXV_F0wXzjX082ehQpCjd7uwvDX-tiwvuvoqCURCNnMjZt0bwM_7FUxuB9bpa7ZiJLL_q-LYBRp9Rw0b4x0jpdu3tP15bIGt3mzjUizh3dW9jYRipEzMVTL4yPf7W1HqAo8uui2qxQfvm2qCzRmydJOd1WB_OgYlmyuh3s9hrxXWvxfI4wYOXTDn8ZHnxuJ2lGBERuRVrPUqpN1Ro-BjKmSMSHxInlD21qF6oR5xgZu9NIdoeuWtnQlmmZS-B"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 tonal-shift-bg">
+<div class="max-w-7xl mx-auto py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="text-lg font-black text-slate-900 dark:text-white uppercase tracking-widest">Next Gen</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm max-w-xs text-center md:text-left leading-relaxed">
+                    Setting the standard for modern e-commerce experiences with an editorial focus.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-sm font-medium uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-colors" href="#">Privacy Policy</a>
+<a class="text-sm font-medium uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-colors" href="#">Terms of Service</a>
+<a class="text-sm font-medium uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-colors" href="#">Contact Us</a>
+<a class="text-sm font-medium uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-colors" href="#">Shipping</a>
+</div>
+<div class="flex flex-col items-center md:items-end gap-2">
+<p class="text-sm font-medium uppercase tracking-widest text-slate-500 dark:text-slate-400">© 2024 Next Gen. Editorial Commerce.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-400 hover:text-indigo-500 cursor-pointer transition-colors">public</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-indigo-500 cursor-pointer transition-colors">alternate_email</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-indigo-500 cursor-pointer transition-colors">share</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
