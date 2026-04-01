@@ -3,6 +3,7 @@
 import { ProductCard } from "@/components/store/product-card";
 
 type ProductGridProps = {
+  storeSlug: string;
   products: Array<{
     id: string;
     name: string;
@@ -14,7 +15,7 @@ type ProductGridProps = {
   onAddToCart: (productId: string) => void;
 };
 
-export function ProductGrid({ products, onAddToCart }: ProductGridProps) {
+export function ProductGrid({ storeSlug, products, onAddToCart }: ProductGridProps) {
   if (products.length === 0) {
     return (
       <div className="rounded-xl border border-[#c7c4d7]/30 bg-white p-10 text-center text-[#464554]">
@@ -26,7 +27,12 @@ export function ProductGrid({ products, onAddToCart }: ProductGridProps) {
   return (
     <section className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
+        <ProductCard
+          key={product.id}
+          storeSlug={storeSlug}
+          product={product}
+          onAddToCart={onAddToCart}
+        />
       ))}
     </section>
   );

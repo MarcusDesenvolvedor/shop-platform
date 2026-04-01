@@ -32,6 +32,10 @@ Define and implement the product catalog feature for a store, including image UR
 
 ## API Endpoints
 
+- `GET /api/products/[id]?slug={storeSlug}`
+  - Public endpoint.
+  - Returns one **active** product when it belongs to the store identified by `slug`.
+  - Response includes `categoryName` when the category exists for that store.
 - `GET /api/stores/[slug]/products`
   - Public endpoint.
   - Returns only active products from the store.
@@ -52,6 +56,7 @@ Define and implement the product catalog feature for a store, including image UR
 
 - Product dashboard UI CRUD is intentionally out of scope for now (task 4.7 ignored).
 - API contracts are delivered so the UI can be integrated later.
+- Public product detail page: `/store/{slug}/product/{id}` loads the product via `GET /api/products/{id}?slug={slug}`, shows gallery, info, quantity, and add-to-cart using the same cookie cart as the storefront (`/api/stores/{slug}/cart`).
 
 ## Dependencies
 

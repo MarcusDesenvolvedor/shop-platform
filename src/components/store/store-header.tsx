@@ -115,7 +115,7 @@ export function StoreHeader({
   };
 
   return (
-    <header className="fixed top-0 z-40 w-full border-b border-[#c7c4d7]/30 bg-white/80 backdrop-blur-md">
+    <header className="fixed top-0 z-40 w-full border-b border-[#c7c4d7]/30 bg-white/80 shadow-[0_12px_32px_-4px_rgba(25,28,30,0.06)] backdrop-blur-md">
       <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6">
         <div className="flex items-center gap-10">
           <Link href={`/store/${storeSlug}`} className="text-2xl font-bold tracking-tight text-[#191c1e]">

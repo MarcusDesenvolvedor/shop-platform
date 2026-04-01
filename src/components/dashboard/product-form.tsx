@@ -239,7 +239,11 @@ export function ProductForm({ categories, product }: ProductFormProps) {
                 <Label>Category</Label>
                 <Select
                   value={selectedCategoryId}
-                  onValueChange={(value) => setValue("categoryId", value, { shouldValidate: true })}
+                  onValueChange={(value) => {
+                    if (value) {
+                      setValue("categoryId", value, { shouldValidate: true });
+                    }
+                  }}
                 >
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select a category">

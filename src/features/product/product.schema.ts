@@ -39,7 +39,17 @@ export const listProductsQuerySchema = z.object({
   sort: z.enum(["latest", "best_sellers"]).optional(),
 });
 
+export const publicProductParamsSchema = z.object({
+  id: z.string().trim().uuid(),
+});
+
+export const publicProductQuerySchema = z.object({
+  slug: z.string().trim().min(1).max(200),
+});
+
 export type CreateProductPayload = z.infer<typeof createProductSchema>;
 export type UpdateProductPayload = z.infer<typeof updateProductSchema>;
 export type ProductIdParamsPayload = z.infer<typeof productIdParamsSchema>;
 export type ListProductsQueryPayload = z.infer<typeof listProductsQuerySchema>;
+export type PublicProductParamsPayload = z.infer<typeof publicProductParamsSchema>;
+export type PublicProductQueryPayload = z.infer<typeof publicProductQuerySchema>;

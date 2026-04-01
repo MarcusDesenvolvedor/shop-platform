@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#e6e8ea",
+              "primary-container": "#6063ee",
+              "inverse-primary": "#c0c1ff",
+              "inverse-on-surface": "#eff1f3",
+              "background": "#f7f9fb",
+              "on-secondary-fixed-variant": "#3a485b",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#d5e3fc",
+              "surface-container-highest": "#e0e3e5",
+              "surface": "#f7f9fb",
+              "on-error": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#e1e0ff",
+              "tertiary-fixed": "#ffdcc5",
+              "tertiary-container": "#b55d00",
+              "on-secondary-fixed": "#0d1c2e",
+              "on-primary-fixed": "#07006c",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#fffbff",
+              "surface-container-low": "#f2f4f6",
+              "surface-container": "#eceef0",
+              "outline-variant": "#c7c4d7",
+              "secondary-container": "#d5e3fc",
+              "on-background": "#191c1e",
+              "surface-bright": "#f7f9fb",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#191c1e",
+              "inverse-surface": "#2d3133",
+              "outline": "#767586",
+              "on-tertiary-fixed": "#301400",
+              "on-secondary-container": "#57657a",
+              "on-primary-fixed-variant": "#2f2ebe",
+              "on-tertiary-container": "#fffbff",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed-variant": "#703700",
+              "on-surface-variant": "#464554",
+              "surface-dim": "#d8dadc",
+              "secondary-fixed-dim": "#b9c7df",
+              "primary": "#4648d4",
+              "surface-variant": "#e0e3e5",
+              "tertiary": "#904900",
+              "primary-fixed-dim": "#c0c1ff",
+              "secondary": "#515f74",
+              "tertiary-fixed-dim": "#ffb783",
+              "surface-tint": "#494bd6"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-[0_12px_32px_-4px_rgba(25,28,30,0.06)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+<div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50">STRATOS</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-slate-100 transition-colors duration-200" href="#">Shop</a>
+<a class="text-indigo-600 dark:text-indigo-400 font-semibold border-b-2 border-indigo-600 pb-1" href="#">Collections</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-slate-100 transition-colors duration-200" href="#">Journal</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-slate-100 transition-colors duration-200" href="#">Support</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="hover:text-indigo-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hover:text-indigo-600 transition-colors relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+<button class="hover:text-indigo-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20">
+<div class="max-w-7xl mx-auto px-8">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center space-x-2 text-sm text-on-surface-variant mb-12">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Collections</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Electronics</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="font-medium text-on-surface">Aero Wireless Headphones</span>
+</nav>
+<!-- Product Primary Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Gallery Section -->
+<div class="lg:col-span-7 space-y-6">
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container-low shadow-sm">
+<img alt="Aero Wireless Headphones" class="w-full h-full object-cover" data-alt="Premium sleek black over-ear wireless headphones with a matte finish, resting on a clean white surface with studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbW8_r2Bi_u-6jBu1zRfZXKA1_u80KCA4n03vfMPInvmwVmVyeKxEN2JwZ2fwbcAorLU7M9EmP-AFgI3XHA3gG-JwR_EHW947xT_hCpi3KdICx8f2EyDWSgUDSdrVwLXFotVIaD6Sc6kSxWGKM3xI9CeQutGDwQjlajg-DI2BhxQujwda0aMIKsrbyGSFloMg3QkfgPH3udVUrLDaj7WFigt1P9MLeTk5-oWAoaH1vot5Q2YU7sfTO2k9_JLEBv7vTwgzIGuHI1zR2"/>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="aspect-square rounded-lg overflow-hidden cursor-pointer ring-2 ring-primary">
+<img alt="Main View" class="w-full h-full object-cover" data-alt="Front view of matte black headphones showing leather ear cushions and adjustable headband" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFvwxKtCNApYPu9Dw32B1K8CuKZfxKyTpBdq3plvbNX8UDvRfeko-rE3YAmfKjQuHyK0Di2L8DKEneOUF2aTs6wqfejqy6DEfZgpxM4In58Dz1aGYbG8_44ef8voztoAvehkY9KFkkH8r4o7Y6EMP6FXQ2DzM8zZGLBEUBdPY7rJTnCbm15iEUsjrPNTF5s-WYZU4W1052h1mA4py_HvMIkCnXyctImGKE3oaaSx47bgMra0MnbTq_Ry5poNmaiX_j_ygSdKwBgCmR"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
+<img alt="Detail View" class="w-full h-full object-cover" data-alt="Close up detail of the headphone driver and hinge mechanism with metallic silver accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs-l4iY48ugaNIshlhYEVyAUV8rJ__tQ7jYaa0IA4EhbJhpQAcGNUuEcha6Ip818VDdpKxACERpg0OBZvCcL7jYlAt5dqGWAmjoeQm9Bg02BBelX7cmqpOHFP2xjG1dB1RRnpE-3mQxuNZqDtnTS9GjGzuN0X-10QIP5gz7idVOFn1WwHEIBOadgFBBx1jPUBvgKs5WEBGygt_OjdmrqfyEN99YmMJ9KiLgGQVuRESPU-1HsPygFMQ41IkdlqPY1hXq-7cFUpZLZbU"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
+<img alt="Lifestyle View" class="w-full h-full object-cover" data-alt="Lifestyle shot of a person wearing headphones in a modern minimalist office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASFeLb8q0u6Sbw8eYlUUuO0fJCMpbgsAGJuOXPJSxM1PIjCtr_PcIjo0BXPIQLSdLszbflbpZLTDOhLQnt-8TkkFRMvPRG8F7rK_Q7x4lEQ2tECYFI1hZuEtJhpTuyLEesbNUCMMOJ4JhP4qMCssQIgKLAvBM25Yxx3M8FnnzMPNp-Hz1Fm328s79DCMLFh7Znligk9Y_6T1CYa3M223lIrbHRixSnfeBuEcg039J56Zc8P1g5mKFvBQmvh0_qs1Ii6y9LRHLosKSf"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container-high flex items-center justify-center opacity-60 hover:opacity-100 cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant">play_circle</span>
+</div>
+</div>
+</div>
+<!-- Content Section -->
+<div class="lg:col-span-5 flex flex-col">
+<div class="flex items-center space-x-2 mb-2">
+<div class="flex text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+</div>
+<span class="text-sm font-medium text-on-surface-variant">4.9/5 (124 reviews)</span>
+</div>
+<h1 class="text-4xl font-bold tracking-tight text-on-surface mb-4">Aero Wireless Headphones</h1>
+<div class="text-3xl font-light text-primary mb-8">$299.00</div>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-10">
+                        Experience pure sound with the Aero series. Featuring <span class="text-on-surface font-semibold">Deep Bass</span> and advanced <span class="text-on-surface font-semibold">Active Noise Canceling</span> technology for an immersive auditory journey.
+                    </p>
+<!-- Selection Controls -->
+<div class="space-y-8 mb-12">
+<div>
+<label class="block text-sm font-bold tracking-widest uppercase text-on-surface-variant mb-4">Color Options</label>
+<div class="flex space-x-4">
+<button class="w-10 h-10 rounded-full bg-slate-900 ring-2 ring-primary ring-offset-4 ring-offset-background"></button>
+<button class="w-10 h-10 rounded-full bg-slate-300 ring-1 ring-outline-variant hover:scale-110 transition-transform"></button>
+<button class="w-10 h-10 rounded-full bg-indigo-900 ring-1 ring-outline-variant hover:scale-110 transition-transform"></button>
+</div>
+</div>
+<div class="flex items-end space-x-6">
+<div class="flex-1">
+<label class="block text-sm font-bold tracking-widest uppercase text-on-surface-variant mb-4">Quantity</label>
+<div class="flex items-center h-14 bg-surface-container-low rounded-lg px-4 justify-between">
+<button class="text-on-surface hover:text-primary"><span class="material-symbols-outlined">remove</span></button>
+<span class="font-semibold text-lg">1</span>
+<button class="text-on-surface hover:text-primary"><span class="material-symbols-outlined">add</span></button>
+</div>
+</div>
+<button class="flex-[2] h-14 bg-gradient-to-r from-primary to-primary-container text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-95 transition-all">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Trust Indicators -->
+<div class="pt-8 border-t-2 border-surface-container-low space-y-4">
+<div class="flex items-center space-x-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<span class="text-sm">Free shipping on orders over $100</span>
+</div>
+<div class="flex items-center space-x-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<span class="text-sm">Comprehensive 2-year warranty included</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tabs Section -->
+<div class="mt-32">
+<div class="flex border-b-2 border-surface-container">
+<button class="px-8 py-4 border-b-2 border-primary text-primary font-bold">Description</button>
+<button class="px-8 py-4 text-on-surface-variant font-medium hover:text-on-surface">Specifications</button>
+<button class="px-8 py-4 text-on-surface-variant font-medium hover:text-on-surface">Reviews</button>
+</div>
+<div class="py-12 max-w-4xl">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<h3 class="text-2xl font-bold">Unmatched Clarity</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                                Our proprietary 40mm drivers deliver a soundstage that is both intimate and expansive. From the deepest sub-bass to the crispest highs, the Aero headphones ensure every note is heard exactly as the artist intended.
+                            </p>
+<ul class="space-y-3">
+<li class="flex items-center space-x-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span>Hybrid Active Noise Cancellation</span>
+</li>
+<li class="flex items-center space-x-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span>40-hour battery life on a single charge</span>
+</li>
+<li class="flex items-center space-x-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span>Multi-point Bluetooth connectivity</span>
+</li>
+</ul>
+</div>
+<div class="aspect-video rounded-lg overflow-hidden bg-surface-container-low">
+<img alt="Audio wave visual" class="w-full h-full object-cover" data-alt="Abstract visualization of golden sound waves representing high-fidelity audio quality against a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ3vWyTJvjPbePshDMkSKfUDUr8wW6mt9PNegjD_lhR5Tw-FrU3_SN4wKuFMLVZMtl9Ypod86yzi5aZRwYDr5nunL-GUFg9GgaT9wPa9QSmZm2XfH1o4KwkntyXp6DTNKBYSWm7zRa-wIIjsUsadY9X66Vzij1qPd6p8v2zkBsxg2c33u6-DIt8eh8MIHM0bJFWvmmzoHOWjJP-uYRTsDurv_83YjGqSNzV98fSDeyXTJEKKTynKY-msX8lL-bLLjyzUUB6-4JD06J"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Related Products Section -->
+<div class="mt-32">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-2 block">Curated for you</span>
+<h2 class="text-3xl font-bold tracking-tight">Related Products</h2>
+</div>
+<a class="text-primary font-semibold flex items-center space-x-2 group" href="#">
+<span>View Collection</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-4 relative">
+<img alt="Related 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist white in-ear wireless earbuds inside their charging case, soft morning lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIKJ-POSUDyuO1x1-LXKmxNambIiIMONU80oV1LN2TXMvGag0KVbnCrnebEeUQTsaflXlxVtGjQyMFJhMmpDK-AMMlegks1V6PbLakLdqmHI_4842SMTY4XHcSgHDCKDnyGCBMeewezumY-X58SiLym1CbM369Bz_FDdYIqSNgGTzm2Rwi90LOOgGJQIzUlgjNCRqdEpsv-6m-cW-PPNiIob3rOudkEjewf5YbG9dJRbAIZPg7ogOnmW2ccvYhpYMvoYtldBGDlbcQ"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest text-on-surface shadow-sm">NEW</div>
+</div>
+<h3 class="font-bold text-on-surface mb-1">Aero Buds Pro</h3>
+<p class="text-on-surface-variant text-sm mb-2">Compact Audio</p>
+<div class="text-primary font-bold">$149.00</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-4">
+<img alt="Related 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sleek brushed aluminum desktop speaker with industrial design aesthetics on a wooden desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEKP5k-9fyR5niuwqzyfFTXYgBPZLOVG-8Gd6-SgIFIugYsXPP6S8zNORoZyJc2ragJICAqbqLya3U9gH1YBUF0BFamPTBjtJgYxuiCDWmI7pApe2SRFnynggzhmcG8Ejn3CcosdfZFvl-9nXRffcGBImXytOsusfn48Uk6Ic2_lxHMjX-fPE_uGmoB-GGJ0nSssdZrPm99zfb2WkTB6kwwZ7j3sadcF4s7m_HuHjvjPNAlLky2o7cyxUkLiqCOpsxXrMyy3CwFZ1h"/>
+</div>
+<h3 class="font-bold text-on-surface mb-1">Sonic Station X</h3>
+<p class="text-on-surface-variant text-sm mb-2">Desktop Audio</p>
+<div class="text-primary font-bold">$399.00</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-4">
+<img alt="Related 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Silver wireless headphones with large ear cups resting on a modern glass stand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCOHVyreXwq875Bm52NAKAP2F9b00RhWaDSW3Xd-iFLD7FWzQCiO6fSAVoQk2IVgttSzXECOa3XDIdn8JOSvC2DZTGyPw0GA12hwxYob4J5BKdDvqyrcJ1deS0ABpRKdX1HL6H5dzIxpn_v56jf8niMrseWHj3CAEbP13cUlvD894agxi_Fvg2_TgkALmSlcxvQ_zCUZVJsw8SJznnA3gPzAkD2I5jL8-iCJu7Uc-RXHNH_APS3FLsx8PNQOp9EqjiEpZZRcQRxgOU"/>
+</div>
+<h3 class="font-bold text-on-surface mb-1">Horizon Over-Ear</h3>
+<p class="text-on-surface-variant text-sm mb-2">Luxury Electronics</p>
+<div class="text-primary font-bold">$499.00</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-4 relative">
+<img alt="Related 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Collection of minimalist electronic devices including a sleek watch and phone on a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0u5MCughQqmpp3J15tJNF0l1OjJeqyDalP76kJC-JvE0Ws7nqCRAA1SAk6uwjiJbRBIdMQnrPsaGeO29bV-h79lHZLM2lcbvvnLY6xFHklkvLgNSAPVQLv0crzb9LGCHy9cVSFDyj2rhwohECvV4JB88cuyZg3QZ0ig2pD3To18sFgJw2kSLm3kc2kJTJNhKcXmY0q8HV_kMGbu6rnZEYSrPeU8uT17naGpGuhGS-Z6kUCDnOH1Aq3kY0Jl1L6LlFfarvSPFaJSzc"/>
+<div class="absolute top-4 right-4 bg-error text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest shadow-sm">-15%</div>
+</div>
+<h3 class="font-bold text-on-surface mb-1">Aero Sync Watch</h3>
+<p class="text-on-surface-variant text-sm mb-2">Smart Wearables</p>
+<div class="flex items-center space-x-2">
+<div class="text-primary font-bold">$210.00</div>
+<div class="text-on-surface-variant text-sm line-through">$250.00</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-950 w-full py-16 px-8 mt-20">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between items-center max-w-7xl mx-auto">
+<div class="mb-8 lg:mb-0">
+<div class="text-lg font-black text-slate-900 dark:text-slate-50 mb-4">STRATOS</div>
+<p class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm tracking-wide max-w-xs leading-relaxed">
+                    © 2024 Stratos Electronics. Editorial Excellence in Hardware. Crafted for the modern professional.
+                </p>
+</div>
+<div class="flex flex-wrap gap-x-12 gap-y-4">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:underline decoration-indigo-500 decoration-2 underline-offset-4 transition-all" href="#">Privacy</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:underline decoration-indigo-500 decoration-2 underline-offset-4 transition-all" href="#">Terms</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:underline decoration-indigo-500 decoration-2 underline-offset-4 transition-all" href="#">Shipping</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:underline decoration-indigo-500 decoration-2 underline-offset-4 transition-all" href="#">Returns</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:underline decoration-indigo-500 decoration-2 underline-offset-4 transition-all" href="#">Sustainability</a>
+</div>
+<div class="mt-8 lg:mt-0 flex space-x-6">
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer transition-colors">public</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer transition-colors">alternate_email</span>
+</div>
+</div>
+</footer>
+</body></html>

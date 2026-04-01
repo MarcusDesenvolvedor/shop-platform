@@ -70,7 +70,7 @@ export function ProductsTable({ products }: ProductsTableProps) {
             {products.length} {products.length === 1 ? "product" : "products"}
           </p>
         </div>
-        <Button render={<Link href="/dashboard/products/new" />}>
+        <Button nativeButton={false} render={<Link href="/dashboard/products/new" />}>
           <Plus className="h-4 w-4" />
           New Product
         </Button>

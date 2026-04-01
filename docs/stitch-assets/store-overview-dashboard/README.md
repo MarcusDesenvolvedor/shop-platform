@@ -28,7 +28,13 @@ Additional screen:
   - `features-section/screen.html` (generated code)
 
 - Screen title: `Pricing Section`
-- Screen ID: `11bd20e99b6f41549a9f3a631cc1cc57`
-- Files:
-  - `pricing-section/screen.png` (screenshot)
-  - `pricing-section/screen.html` (generated code)
+  - Screen ID: `11bd20e99b6f41549a9f3a631cc1cc57`
+  - Files:
+    - `pricing-section/screen.png` (screenshot)
+    - `pricing-section/screen.html` (generated code)
+
+- Screen title: `Product Details: Aero Wireless Headphones`
+  - Screen ID: `4aa34922df804909834f3267a66b1500`
+  - Files:
+    - `product-details-aero-headphones/screen.png` (screenshot)
+    - `product-details-aero-headphones/screen.html` (generated code)

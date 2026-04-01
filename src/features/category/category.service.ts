@@ -58,6 +58,11 @@ export async function listCategoriesForStoreSlug(storeSlug: string): Promise<Cat
   return listCategoriesByStoreId(store.id);
 }
 
+export async function getCategoryNameForStoreProduct(storeId: string, categoryId: string): Promise<string | null> {
+  const category = await findCategoryByIdAndStore(categoryId, storeId);
+  return category?.name ?? null;
+}
+
 export async function getCategoryForStore(storeId: string, categoryId: string): Promise<Category> {
   return requireCategoryInStore(storeId, categoryId);
 }

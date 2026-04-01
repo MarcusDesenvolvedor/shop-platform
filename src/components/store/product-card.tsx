@@ -1,8 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 type ProductCardProps = {
+  storeSlug: string;
   product: {
     id: string;
     name: string;
@@ -21,7 +23,7 @@ function formatPrice(value: number): string {
   }).format(value);
 }
 
-export function ProductCard({ product, onAddToCart }: ProductCardProps) {
+export function ProductCard({ storeSlug, product, onAddToCart }: ProductCardProps) {
   const outOfStock = product.stock === 0;
   const badgeLabel = outOfStock ? "Out of stock" : product.stock <= 3 ? "Low stock" : "New arrival";
   const badgeClassName = outOfStock
@@ -32,7 +34,10 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl border border-[#c7c4d7]/20 bg-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#191c1e]/5">
-      <div className="relative aspect-square w-full overflow-hidden bg-[#eceef0]">
+      <Link
+        href={`/store/${storeSlug}/product/${product.id}`}
+        className="relative block aspect-square w-full overflow-hidden bg-[#eceef0]"
+      >
         {product.imageUrl ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -48,11 +53,15 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
         <span className={`absolute left-4 top-4 rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-wider ${badgeClassName}`}>
           {badgeLabel}
         </span>
-      </div>
+      </Link>
 
       <div className="flex flex-1 flex-col p-6">
         <div className="mb-4">
-          <h2 className="line-clamp-1 text-lg font-bold leading-tight text-[#191c1e]">{product.name}</h2>
+          <Link href={`/store/${storeSlug}/product/${product.id}`} className="block">
+            <h2 className="line-clamp-1 text-lg font-bold leading-tight text-[#191c1e] transition-colors hover:text-[#4648d4]">
+              {product.name}
+            </h2>
+          </Link>
           <p className="mt-1 line-clamp-2 text-sm text-[#464554]">{product.description}</p>
         </div>
 
